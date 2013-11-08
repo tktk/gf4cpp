@@ -1,0 +1,9 @@
+﻿#ifndef SUCROSE4CPP_COMMON_LINUX_STRINGCONVERTER_H
+#define SUCROSE4CPP_COMMON_LINUX_STRINGCONVERTER_H
+
+namespace sucrose {
+    void initializeStringConverter(
+    );
+}
+
+#endif  // SUCROSE4CPP_COMMON_LINUX_STRINGCONVERTER_H
