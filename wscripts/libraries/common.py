@@ -4,12 +4,16 @@ from ..builder import buildShlib
 
 def build( _context ):
     osSources = {
-        'common_setup',
         'stringconverter',
+    }
+
+    libraries = {
+        'sucrose_common',
     }
 
     buildShlib(
         _context,
         'common',
         osSources = osSources,
+        libraries = libraries,
     )

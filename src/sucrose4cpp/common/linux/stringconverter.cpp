@@ -1,199 +1,106 @@
 ﻿#include "gf/util/export.h"
 #include "gf4cpp/common/stringconverter.h"
 
-#include "sucrose4cpp/common/linux/stringconverter.h"
+#include "gf/common/stringconverter.h"
 #include "gf4cpp/common/primitives.h"
 
-#include <iconv.h>
-#include <locale.h>
-#include <langinfo.h>
-
 namespace {
-    const auto  MAX_CHARACTER_SIZE = 6; // UTF-8の1文字最大符号数
-
-    const gf::StringChar    ENCODE_UTF8[] = "UTF-8";
-    const gf::StringChar    ENCODE_UTF16[] = "UTF-16LE";
-    const gf::StringChar    ENCODE_UTF32[] = "UTF-32LE";
-    const gf::StringChar *  ENCODE_STRING;
-
-    class IconvDeleter
+    gf::Size getMaxStringCharLength(
+    )
     {
-    private:
-        iconv_t &   iconv_;
+        return GF_STRING_MAX_CHAR_LENGTH;
+    }
 
-    public:
-        IconvDeleter(
-            iconv_t &   _iconv_
-        )
-            : iconv_( _iconv_ )
-        {
-        }
-
-        ~IconvDeleter(
-        )
-        {
-            iconv_close( this->iconv_ );
-        }
-    };
-
-    template< typename T >
-    const gf::StringChar * getEncodeUnicode(
-        const T &
-    );
-
-    template<>
-    const gf::StringChar * getEncodeUnicode(
+    gf::Size getMaxCharLength(
         const gf::Utf8 &
     )
     {
-        return ENCODE_UTF8;
+        return GF_UTF8_MAX_CHAR_LENGTH;
     }
 
-    template<>
-    const gf::StringChar * getEncodeUnicode(
+    gf::Size getMaxCharLength(
         const gf::Utf16 &
     )
     {
-        return ENCODE_UTF16;
+        return GF_UTF16_MAX_CHAR_LENGTH;
     }
 
-    template<>
-    const gf::StringChar * getEncodeUnicode(
+    gf::Size getMaxCharLength(
         const gf::Utf32 &
     )
     {
-        return ENCODE_UTF32;
-    }
-
-    const gf::StringChar * getEncodeString(
-    )
-    {
-        return ENCODE_STRING;
-    }
-
-    gf::Bool convert(
-        const gf::StringChar *      _ENCODE_TO
-        , const gf::StringChar *    _ENCODE_FROM
-        , gf::Byte *                _buffer
-        , gf::Size &                _bufferSize
-        , void *                    _input
-        , gf::Size                  _inputSize
-    )
-    {
-        auto    iconv_ = iconv_open(
-            _ENCODE_TO
-            , _ENCODE_FROM
-        );
-        if( iconv_ == reinterpret_cast< iconv_t >( -1 ) ) {
-            return false;
-        }
-        IconvDeleter    deleter( iconv_ );
-
-        auto    input = static_cast< gf::Byte * >( _input );
-
-        auto    outputSize = _bufferSize;
-
-        if( iconv(
-            iconv_
-            , &input
-            , &_inputSize
-            , &_buffer
-            , &outputSize
-        ) < 0 ) {
-            return false;
-        }
-
-        if( _inputSize > 0 ) {
-            return false;
-        }
-
-        _bufferSize -= outputSize;
-
-        return true;
+        return GF_UTF32_MAX_CHAR_LENGTH;
     }
 
     template<
         typename TO_T
         , typename FROM_T
+        , typename CONVERTER
     >
     gf::Bool convert(
-        const gf::StringChar *      _ENCODE_TO
-        , const gf::StringChar *    _ENCODE_FROM
-        , TO_T &                    _to
-        , const FROM_T &            _FROM
+        TO_T &              _to
+        , const FROM_T &    _FROM
+        , const CONVERTER & _CONVERTER
+        , gf::Size          _maxToCharLength
     )
     {
-        const auto  LENGTH = _FROM.length();
+        const auto  FROM_LENGTH = _FROM.length();
+        const auto  FROM = _FROM.c_str();
 
-        const auto  INPUT_SIZE = LENGTH * sizeof( typename FROM_T::value_type );
-        auto        input = const_cast< typename FROM_T::value_type * >( _FROM.c_str() );
+        auto                        bufferLength = FROM_LENGTH * _maxToCharLength;
+        typename TO_T::value_type   buffer[ bufferLength ];
 
-        auto        bufferSize = LENGTH * MAX_CHARACTER_SIZE;
-        gf::Byte    buffer[ bufferSize ];
-
-        const auto  CONVERTED = convert(
-            _ENCODE_TO
-            , _ENCODE_FROM
-            , buffer
-            , bufferSize
-            , input
-            , INPUT_SIZE
-        );
-
-        if( CONVERTED == false ) {
+        if( _CONVERTER(
+            buffer
+            , bufferLength
+            , FROM
+            , FROM_LENGTH
+        ) == false ) {
             return false;
         }
 
         _to.assign(
-            reinterpret_cast< typename TO_T::value_type * >( buffer )
-            , bufferSize / sizeof( typename TO_T::value_type )
+            buffer
+            , bufferLength
         );
 
         return true;
     }
 
-    template< typename TO_T >
-    gf::Bool fromString(
-        TO_T &                  _to
-        , const gf::String &    _FROM
-    )
-    {
-        return convert(
-            getEncodeUnicode( _to )
-            , getEncodeString()
-            , _to
-            , _FROM
-        );
-    }
-
-    template< typename FROM_T >
+    template<
+        typename FROM_T
+        , typename CONVERTER
+    >
     gf::Bool toString(
         gf::String &        _to
         , const FROM_T &    _FROM
+        , const CONVERTER & _CONVERTER
     )
     {
         return convert(
-            getEncodeString()
-            , getEncodeUnicode( _FROM )
-            , _to
+            _to
             , _FROM
+            , _CONVERTER
+            , getMaxStringCharLength()
         );
     }
 
     template<
         typename TO_T
         , typename FROM_T
+        , typename CONVERTER
     >
-    gf::Bool convertUnicode(
+    gf::Bool toUnicode(
         TO_T &              _to
         , const FROM_T &    _FROM
+        , const CONVERTER & _CONVERTER
     )
     {
         return convert(
-            getEncodeUnicode( _to )
-            , getEncodeUnicode( _FROM )
-            , _to
+            _to
             , _FROM
+            , _CONVERTER
+            , getMaxCharLength( _to )
         );
     }
 }
@@ -204,9 +111,23 @@ namespace gf {
         , const String &    _FROM
     )
     {
-        return ::fromString(
+        return toUnicode(
             _to
             , _FROM
+            , [](
+                Utf8Char *              _to
+                , Size &                _toLength
+                , const StringChar *    _FROM
+                , Size                  _fromLength
+            )
+            {
+                return gfUtf8FromString(
+                    _to
+                    , &_toLength
+                    , _FROM
+                    , _fromLength
+                );
+            }
         );
     }
 
@@ -215,9 +136,23 @@ namespace gf {
         , const String &    _FROM
     )
     {
-        return ::fromString(
+        return toUnicode(
             _to
             , _FROM
+            , [](
+                Utf16Char *             _to
+                , Size &                _toLength
+                , const StringChar *    _FROM
+                , Size                  _fromLength
+            )
+            {
+                return gfUtf16FromString(
+                    _to
+                    , &_toLength
+                    , _FROM
+                    , _fromLength
+                );
+            }
         );
     }
 
@@ -226,9 +161,23 @@ namespace gf {
         , const String &    _FROM
     )
     {
-        return ::fromString(
+        return toUnicode(
             _to
             , _FROM
+            , [](
+                Utf32Char *             _to
+                , Size &                _toLength
+                , const StringChar *    _FROM
+                , Size                  _fromLength
+            )
+            {
+                return gfUtf32FromString(
+                    _to
+                    , &_toLength
+                    , _FROM
+                    , _fromLength
+                );
+            }
         );
     }
 
@@ -240,6 +189,20 @@ namespace gf {
         return ::toString(
             _to
             , _FROM
+            , [](
+                StringChar *        _to
+                , Size &            _toLength
+                , const Utf8Char *  _FROM
+                , Size              _fromLength
+            )
+            {
+                return gfStringFromUtf8(
+                    _to
+                    , &_toLength
+                    , _FROM
+                    , _fromLength
+                );
+            }
         );
     }
 
@@ -251,6 +214,20 @@ namespace gf {
         return ::toString(
             _to
             , _FROM
+            , [](
+                StringChar *        _to
+                , Size &            _toLength
+                , const Utf16Char * _FROM
+                , Size              _fromLength
+            )
+            {
+                return gfStringFromUtf16(
+                    _to
+                    , &_toLength
+                    , _FROM
+                    , _fromLength
+                );
+            }
         );
     }
 
@@ -262,6 +239,20 @@ namespace gf {
         return ::toString(
             _to
             , _FROM
+            , [](
+                StringChar *        _to
+                , Size &            _toLength
+                , const Utf32Char * _FROM
+                , Size              _fromLength
+            )
+            {
+                return gfStringFromUtf32(
+                    _to
+                    , &_toLength
+                    , _FROM
+                    , _fromLength
+                );
+            }
         );
     }
 
@@ -270,9 +261,23 @@ namespace gf {
         , const Utf16 & _FROM
     )
     {
-        return ::convertUnicode(
+        return toUnicode(
             _to
             , _FROM
+            , [](
+                Utf8Char *          _to
+                , Size &            _toLength
+                , const Utf16Char * _FROM
+                , Size              _fromLength
+            )
+            {
+                return gfUtf8FromUtf16(
+                    _to
+                    , &_toLength
+                    , _FROM
+                    , _fromLength
+                );
+            }
         );
     }
 
@@ -281,9 +286,23 @@ namespace gf {
         , const Utf32 & _FROM
     )
     {
-        return ::convertUnicode(
+        return toUnicode(
             _to
             , _FROM
+            , [](
+                Utf8Char *          _to
+                , Size &            _toLength
+                , const Utf32Char * _FROM
+                , Size              _fromLength
+            )
+            {
+                return gfUtf8FromUtf32(
+                    _to
+                    , &_toLength
+                    , _FROM
+                    , _fromLength
+                );
+            }
         );
     }
 
@@ -292,9 +311,23 @@ namespace gf {
         , const Utf8 &  _FROM
     )
     {
-        return ::convertUnicode(
+        return toUnicode(
             _to
             , _FROM
+            , [](
+                Utf16Char *         _to
+                , Size &            _toLength
+                , const Utf8Char *  _FROM
+                , Size              _fromLength
+            )
+            {
+                return gfUtf16FromUtf8(
+                    _to
+                    , &_toLength
+                    , _FROM
+                    , _fromLength
+                );
+            }
         );
     }
 
@@ -303,9 +336,23 @@ namespace gf {
         , const Utf32 & _FROM
     )
     {
-        return ::convertUnicode(
+        return toUnicode(
             _to
             , _FROM
+            , [](
+                Utf16Char *         _to
+                , Size &            _toLength
+                , const Utf32Char * _FROM
+                , Size              _fromLength
+            )
+            {
+                return gfUtf16FromUtf32(
+                    _to
+                    , &_toLength
+                    , _FROM
+                    , _fromLength
+                );
+            }
         );
     }
 
@@ -314,9 +361,23 @@ namespace gf {
         , const Utf8 &  _FROM
     )
     {
-        return ::convertUnicode(
+        return toUnicode(
             _to
             , _FROM
+            , [](
+                Utf32Char *         _to
+                , Size &            _toLength
+                , const Utf8Char *  _FROM
+                , Size              _fromLength
+            )
+            {
+                return gfUtf32FromUtf8(
+                    _to
+                    , &_toLength
+                    , _FROM
+                    , _fromLength
+                );
+            }
         );
     }
 
@@ -325,19 +386,23 @@ namespace gf {
         , const Utf16 & _FROM
     )
     {
-        return ::convertUnicode(
+        return toUnicode(
             _to
             , _FROM
+            , [](
+                Utf32Char *         _to
+                , Size &            _toLength
+                , const Utf16Char * _FROM
+                , Size              _fromLength
+            )
+            {
+                return gfUtf32FromUtf16(
+                    _to
+                    , &_toLength
+                    , _FROM
+                    , _fromLength
+                );
+            }
         );
-    }
-}
-
-namespace sucrose {
-    void initializeStringConverter(
-    )
-    {
-        setlocale( LC_CTYPE, "" );
-
-        ENCODE_STRING = nl_langinfo( CODESET );
     }
 }
