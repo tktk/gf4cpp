@@ -5,11 +5,26 @@ from . import cmdoption
 
 import os.path
 
+def buildProgram(
+    _context,
+    _target,
+    sources = set(),
+    useModules = set(),
+    libraries = set(),
+):
+    _build(
+        _context.program,
+        _context,
+        _target,
+        sources,
+        useModules,
+        libraries,
+    )
+
 def buildShlib(
     _context,
     _target,
     sources = set(),
-    osSources = set(),
     useModules = set(),
     libraries = set(),
 ):
@@ -18,7 +33,6 @@ def buildShlib(
         _context,
         _target,
         sources,
-        osSources,
         useModules,
         libraries,
     )
@@ -28,64 +42,49 @@ def _build(
     _context,
     _target,
     _sources,
-    _osSources,
     _useModules,
     _libraries,
 ):
     _buildFunc(
-        target = _generateTarget( _target ),
-        source = _generateSources(
-            _target,
-            _sources,
-        ) | _generateOsSources(
-            _context.env[ cmdoption.OS ],
-            _target,
-            _osSources,
-        ),
+        target = _target,
+        source = _generateSources( _sources ),
         use = _useModules,
         lib = _libraries,
     )
 
-def _generateTarget(
-    _target,
-):
-    return common.APPNAME + '_' + _target
-
 def _generateSources(
-    _target,
     _sources,
+    _parent = None,
 ):
-    return {
-        _generateSource(
-            os.path.join(
-                _target,
-                i,
-            )
-        )
-        for i in _sources
-    }
+    result = set()
 
-def _generateOsSources(
-    _OS,
-    _target,
-    _sources,
-):
-    return {
-        _generateSource(
-            os.path.join(
-                _target,
-                _OS,
-                i,
-            )
-        )
-        for i in _sources
-    }
+    TYPE = type( _sources )
+    if TYPE is dict:
+        for key, values in _sources.items():
+            parent = key
+            if _parent is not None:
+                parent = os.path.join(
+                    _parent,
+                    parent,
+                )
 
-def _generateSource(
-    _source,
-):
-    return os.path.join(
-        common.SOURCE_DIR,
-        common.APPNAME,
-        _source + '.cpp',
-    )
+            result |= _generateSources(
+                values,
+                parent,
+            )
+    elif TYPE is set or TYPE is list:
+        for i in _sources:
+            result |= _generateSources(
+                i,
+                _parent,
+            )
+    else:
+        if _parent is not None:
+            _sources = os.path.join(
+                _parent,
+                _sources,
+            )
+
+        result.add( _sources )
+
+    return result

@@ -1,10 +1,23 @@
 # -*- coding: utf-8 -*-
 
+from .. import common
+from .. import cmdoption
 from ..builder import buildShlib
 
+MODULE_NAME = 'common'
+TARGET = common.APPNAME + '_' + MODULE_NAME
+
 def build( _context ):
-    osSources = {
-        'stringconverter',
+    sources = {
+        common.SOURCE_DIR : {
+            common.APPNAME : {
+                MODULE_NAME : {
+                    _context.env[ cmdoption.OS ] : {
+                        'stringconverter.cpp',
+                    },
+                },
+            },
+        },
     }
 
     libraries = {
@@ -13,7 +26,7 @@ def build( _context ):
 
     buildShlib(
         _context,
-        'common',
-        osSources = osSources,
+        TARGET,
+        sources = sources,
         libraries = libraries,
     )
