@@ -1,7 +1,7 @@
 ﻿#include "gf/util/export.h"
-#include "gf4cpp/common/stringconverter.h"
+#include "gf4cpp/common/string.h"
 
-#include "gf/common/stringconverter.h"
+#include "gf/common/string.h"
 #include "gf4cpp/common/primitives.h"
 
 namespace {

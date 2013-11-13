@@ -13,7 +13,7 @@ def build( _context ):
             common.APPNAME : {
                 MODULE_NAME : {
                     _context.env[ cmdoption.OS ] : {
-                        'stringconverter.cpp',
+                        'string.cpp',
                     },
                 },
             },
