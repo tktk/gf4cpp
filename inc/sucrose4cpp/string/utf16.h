@@ -27,10 +27,19 @@ namespace gf {
 
     inline Utf16 * newUtf16(
         const Utf16Char *   _FROM
-        , Size              _length
     )
     {
         return gfUtf16NewFromCharPtr(
+            _FROM
+        );
+    }
+
+    inline Utf16 * newUtf16(
+        const Utf16Char *   _FROM
+        , Size              _length
+    )
+    {
+        return gfUtf16NewFromCharPtrWithLength(
             _FROM
             , _length
         );
@@ -47,10 +56,19 @@ namespace gf {
 
     inline Utf16 * newUtf16FromString(
         const StringChar *  _FROM
-        , Size              _length
     )
     {
         return gfUtf16NewFromStringCharPtr(
+            _FROM
+        );
+    }
+
+    inline Utf16 * newUtf16FromString(
+        const StringChar *  _FROM
+        , Size              _length
+    )
+    {
+        return gfUtf16NewFromStringCharPtrWithLength(
             _FROM
             , _length
         );
@@ -67,10 +85,19 @@ namespace gf {
 
     inline Utf16 * newUtf16FromUnicode(
         const Utf8Char *    _FROM
-        , Size              _length
     )
     {
         return gfUtf16NewFromUtf8CharPtr(
+            _FROM
+        );
+    }
+
+    inline Utf16 * newUtf16FromUnicode(
+        const Utf8Char *    _FROM
+        , Size              _length
+    )
+    {
+        return gfUtf16NewFromUtf8CharPtrWithLength(
             _FROM
             , _length
         );
@@ -87,10 +114,19 @@ namespace gf {
 
     inline Utf16 * newUtf16FromUnicode(
         const Utf32Char *   _FROM
-        , Size              _length
     )
     {
         return gfUtf16NewFromUtf32CharPtr(
+            _FROM
+        );
+    }
+
+    inline Utf16 * newUtf16FromUnicode(
+        const Utf32Char *   _FROM
+        , Size              _length
+    )
+    {
+        return gfUtf16NewFromUtf32CharPtrWithLength(
             _FROM
             , _length
         );
@@ -137,10 +173,21 @@ namespace gf {
     inline Bool assign(
         Utf16 &             _to
         , const Utf16Char * _FROM
-        , Size              _length
     )
     {
         return gfUtf16AssignFromCharPtr(
+            &_to
+            , _FROM
+        );
+    }
+
+    inline Bool assign(
+        Utf16 &             _to
+        , const Utf16Char * _FROM
+        , Size              _length
+    )
+    {
+        return gfUtf16AssignFromCharPtrWithLength(
             &_to
             , _FROM
             , _length
@@ -161,10 +208,21 @@ namespace gf {
     inline Bool assignFromString(
         Utf16 &                 _to
         , const StringChar *    _FROM
-        , Size                  _length
     )
     {
         return gfUtf16AssignFromStringCharPtr(
+            &_to
+            , _FROM
+        );
+    }
+
+    inline Bool assignFromString(
+        Utf16 &                 _to
+        , const StringChar *    _FROM
+        , Size                  _length
+    )
+    {
+        return gfUtf16AssignFromStringCharPtrWithLength(
             &_to
             , _FROM
             , _length
@@ -185,10 +243,21 @@ namespace gf {
     inline Bool assignFromUnicode(
         Utf16 &             _to
         , const Utf8Char *  _FROM
-        , Size              _length
     )
     {
         return gfUtf16AssignFromUtf8CharPtr(
+            &_to
+            , _FROM
+        );
+    }
+
+    inline Bool assignFromUnicode(
+        Utf16 &             _to
+        , const Utf8Char *  _FROM
+        , Size              _length
+    )
+    {
+        return gfUtf16AssignFromUtf8CharPtrWithLength(
             &_to
             , _FROM
             , _length
@@ -209,10 +278,21 @@ namespace gf {
     inline Bool assignFromUnicode(
         Utf16 &             _to
         , const Utf32Char * _FROM
-        , Size              _length
     )
     {
         return gfUtf16AssignFromUtf32CharPtr(
+            &_to
+            , _FROM
+        );
+    }
+
+    inline Bool assignFromUnicode(
+        Utf16 &             _to
+        , const Utf32Char * _FROM
+        , Size              _length
+    )
+    {
+        return gfUtf16AssignFromUtf32CharPtrWithLength(
             &_to
             , _FROM
             , _length
