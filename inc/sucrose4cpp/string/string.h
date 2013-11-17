@@ -27,10 +27,19 @@ namespace gf {
 
     inline String * newString(
         const StringChar *  _FROM
-        , Size              _length
     )
     {
         return gfStringNewFromCharPtr(
+            _FROM
+        );
+    }
+
+    inline String * newString(
+        const StringChar *  _FROM
+        , Size              _length
+    )
+    {
+        return gfStringNewFromCharPtrWithLength(
             _FROM
             , _length
         );
@@ -47,10 +56,19 @@ namespace gf {
 
     inline String * newStringFromUnicode(
         const Utf8Char *    _FROM
-        , Size              _length
     )
     {
         return gfStringNewFromUtf8CharPtr(
+            _FROM
+        );
+    }
+
+    inline String * newStringFromUnicode(
+        const Utf8Char *    _FROM
+        , Size              _length
+    )
+    {
+        return gfStringNewFromUtf8CharPtrWithLength(
             _FROM
             , _length
         );
@@ -67,10 +85,19 @@ namespace gf {
 
     inline String * newStringFromUnicode(
         const Utf16Char *   _FROM
-        , Size              _length
     )
     {
         return gfStringNewFromUtf16CharPtr(
+            _FROM
+        );
+    }
+
+    inline String * newStringFromUnicode(
+        const Utf16Char *   _FROM
+        , Size              _length
+    )
+    {
+        return gfStringNewFromUtf16CharPtrWithLength(
             _FROM
             , _length
         );
@@ -87,10 +114,19 @@ namespace gf {
 
     inline String * newStringFromUnicode(
         const Utf32Char *   _FROM
-        , Size              _length
     )
     {
         return gfStringNewFromUtf32CharPtr(
+            _FROM
+        );
+    }
+
+    inline String * newStringFromUnicode(
+        const Utf32Char *   _FROM
+        , Size              _length
+    )
+    {
+        return gfStringNewFromUtf32CharPtrWithLength(
             _FROM
             , _length
         );
@@ -137,10 +173,21 @@ namespace gf {
     inline Bool assign(
         String &                _to
         , const StringChar *    _FROM
-        , Size                  _length
     )
     {
         return gfStringAssignFromCharPtr(
+            &_to
+            , _FROM
+        );
+    }
+
+    inline Bool assign(
+        String &                _to
+        , const StringChar *    _FROM
+        , Size                  _length
+    )
+    {
+        return gfStringAssignFromCharPtrWithLength(
             &_to
             , _FROM
             , _length
@@ -161,10 +208,21 @@ namespace gf {
     inline Bool assignFromUnicode(
         String &            _to
         , const Utf8Char *  _FROM
-        , Size              _length
     )
     {
         return gfStringAssignFromUtf8CharPtr(
+            &_to
+            , _FROM
+        );
+    }
+
+    inline Bool assignFromUnicode(
+        String &            _to
+        , const Utf8Char *  _FROM
+        , Size              _length
+    )
+    {
+        return gfStringAssignFromUtf8CharPtrWithLength(
             &_to
             , _FROM
             , _length
@@ -185,10 +243,21 @@ namespace gf {
     inline Bool assignFromUnicode(
         String &            _to
         , const Utf16Char * _FROM
-        , Size              _length
     )
     {
         return gfStringAssignFromUtf16CharPtr(
+            &_to
+            , _FROM
+        );
+    }
+
+    inline Bool assignFromUnicode(
+        String &            _to
+        , const Utf16Char * _FROM
+        , Size              _length
+    )
+    {
+        return gfStringAssignFromUtf16CharPtrWithLength(
             &_to
             , _FROM
             , _length
@@ -209,10 +278,21 @@ namespace gf {
     inline Bool assignFromUnicode(
         String &            _to
         , const Utf32Char * _FROM
-        , Size              _length
     )
     {
         return gfStringAssignFromUtf32CharPtr(
+            &_to
+            , _FROM
+        );
+    }
+
+    inline Bool assignFromUnicode(
+        String &            _to
+        , const Utf32Char * _FROM
+        , Size              _length
+    )
+    {
+        return gfStringAssignFromUtf32CharPtrWithLength(
             &_to
             , _FROM
             , _length
