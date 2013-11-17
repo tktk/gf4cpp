@@ -27,10 +27,19 @@ namespace gf {
 
     inline Utf8 * newUtf8(
         const Utf8Char *    _FROM
-        , Size              _length
     )
     {
         return gfUtf8NewFromCharPtr(
+            _FROM
+        );
+    }
+
+    inline Utf8 * newUtf8(
+        const Utf8Char *    _FROM
+        , Size              _length
+    )
+    {
+        return gfUtf8NewFromCharPtrWithLength(
             _FROM
             , _length
         );
@@ -47,10 +56,19 @@ namespace gf {
 
     inline Utf8 * newUtf8FromString(
         const StringChar *  _FROM
-        , Size              _length
     )
     {
         return gfUtf8NewFromStringCharPtr(
+            _FROM
+        );
+    }
+
+    inline Utf8 * newUtf8FromString(
+        const StringChar *  _FROM
+        , Size              _length
+    )
+    {
+        return gfUtf8NewFromStringCharPtrWithLength(
             _FROM
             , _length
         );
@@ -67,10 +85,19 @@ namespace gf {
 
     inline Utf8 * newUtf8FromUnicode(
         const Utf16Char *   _FROM
-        , Size              _length
     )
     {
         return gfUtf8NewFromUtf16CharPtr(
+            _FROM
+        );
+    }
+
+    inline Utf8 * newUtf8FromUnicode(
+        const Utf16Char *   _FROM
+        , Size              _length
+    )
+    {
+        return gfUtf8NewFromUtf16CharPtrWithLength(
             _FROM
             , _length
         );
@@ -87,10 +114,19 @@ namespace gf {
 
     inline Utf8 * newUtf8FromUnicode(
         const Utf32Char *   _FROM
-        , Size              _length
     )
     {
         return gfUtf8NewFromUtf32CharPtr(
+            _FROM
+        );
+    }
+
+    inline Utf8 * newUtf8FromUnicode(
+        const Utf32Char *   _FROM
+        , Size              _length
+    )
+    {
+        return gfUtf8NewFromUtf32CharPtrWithLength(
             _FROM
             , _length
         );
@@ -137,10 +173,21 @@ namespace gf {
     inline Bool assign(
         Utf8 &              _to
         , const Utf8Char *  _FROM
-        , Size              _length
     )
     {
         return gfUtf8AssignFromCharPtr(
+            &_to
+            , _FROM
+        );
+    }
+
+    inline Bool assign(
+        Utf8 &              _to
+        , const Utf8Char *  _FROM
+        , Size              _length
+    )
+    {
+        return gfUtf8AssignFromCharPtrWithLength(
             &_to
             , _FROM
             , _length
@@ -161,10 +208,21 @@ namespace gf {
     inline Bool assignFromString(
         Utf8 &                  _to
         , const StringChar *    _FROM
-        , Size                  _length
     )
     {
         return gfUtf8AssignFromStringCharPtr(
+            &_to
+            , _FROM
+        );
+    }
+
+    inline Bool assignFromString(
+        Utf8 &                  _to
+        , const StringChar *    _FROM
+        , Size                  _length
+    )
+    {
+        return gfUtf8AssignFromStringCharPtrWithLength(
             &_to
             , _FROM
             , _length
@@ -185,10 +243,21 @@ namespace gf {
     inline Bool assignFromUnicode(
         Utf8 &              _to
         , const Utf16Char * _FROM
-        , Size              _length
     )
     {
         return gfUtf8AssignFromUtf16CharPtr(
+            &_to
+            , _FROM
+        );
+    }
+
+    inline Bool assignFromUnicode(
+        Utf8 &              _to
+        , const Utf16Char * _FROM
+        , Size              _length
+    )
+    {
+        return gfUtf8AssignFromUtf16CharPtrWithLength(
             &_to
             , _FROM
             , _length
@@ -209,10 +278,21 @@ namespace gf {
     inline Bool assignFromUnicode(
         Utf8 &              _to
         , const Utf32Char * _FROM
-        , Size              _length
     )
     {
         return gfUtf8AssignFromUtf32CharPtr(
+            &_to
+            , _FROM
+        );
+    }
+
+    inline Bool assignFromUnicode(
+        Utf8 &              _to
+        , const Utf32Char * _FROM
+        , Size              _length
+    )
+    {
+        return gfUtf8AssignFromUtf32CharPtrWithLength(
             &_to
             , _FROM
             , _length
