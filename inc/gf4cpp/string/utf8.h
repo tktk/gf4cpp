@@ -4,24 +4,84 @@
 #include "gfpp/string/utf8.h"
 #include "gf/string/utf8.h"
 
-#include "gfpp/string/string.h"
-#include "gfpp/string/utf16.h"
-#include "gfpp/string/utf32.h"
+namespace gf {
+    inline const GfUtf8 & toGf(
+        const gf::Utf8 &    _UTF8
+    )
+    {
+        return reinterpret_cast< const GfUtf8 & >( _UTF8 );
+    }
+
+    inline GfUtf8 & toGf(
+        gf::Utf8 &  _utf8
+    )
+    {
+        return reinterpret_cast< GfUtf8 & >( _utf8 );
+    }
+
+    inline const GfUtf8 * toGf(
+        const gf::Utf8 *    _UTF8
+    )
+    {
+        return reinterpret_cast< const GfUtf8 * >( _UTF8 );
+    }
+
+    inline GfUtf8 * toGf(
+        gf::Utf8 *  _utf8
+    )
+    {
+        return reinterpret_cast< GfUtf8 * >( _utf8 );
+    }
+
+    inline const gf::Utf8 & toGfpp(
+        const GfUtf8 &  _UTF8
+    )
+    {
+        return reinterpret_cast< const gf::Utf8 & >( _UTF8 );
+    }
+
+    inline gf::Utf8 & toGfpp(
+        GfUtf8 &    _utf8
+    )
+    {
+        return reinterpret_cast< gf::Utf8 & >( _utf8 );
+    }
+
+    inline const gf::Utf8 * toGfpp(
+        const GfUtf8 *  _UTF8
+    )
+    {
+        return reinterpret_cast< const gf::Utf8 * >( _UTF8 );
+    }
+
+    inline gf::Utf8 * toGfpp(
+        GfUtf8 *    _utf8
+    )
+    {
+        return reinterpret_cast< gf::Utf8 * >( _utf8 );
+    }
+}
+
+#include "gf4cpp/string/string.h"
+#include "gf4cpp/string/utf16.h"
+#include "gf4cpp/string/utf32.h"
 #include "gfpp/common/primitives.h"
 
 namespace gf {
     inline Utf8 * newUtf8(
     )
     {
-        return gfUtf8New();
+        return toGfpp( gfUtf8New() );
     }
 
     inline Utf8 * clone(
         const Utf8 &    _UTF8
     )
     {
-        return gfUtf8Clone(
-            &_UTF8
+        return toGfpp(
+            gfUtf8Clone(
+                toGf( &_UTF8 )
+            )
         );
     }
 
@@ -29,8 +89,10 @@ namespace gf {
         const Utf8Char *    _FROM
     )
     {
-        return gfUtf8NewFromCharPtr(
-            _FROM
+        return toGfpp(
+            gfUtf8NewFromCharPtr(
+                _FROM
+            )
         );
     }
 
@@ -39,9 +101,11 @@ namespace gf {
         , Size              _length
     )
     {
-        return gfUtf8NewFromCharPtrWithLength(
-            _FROM
-            , _length
+        return toGfpp(
+            gfUtf8NewFromCharPtrWithLength(
+                _FROM
+                , _length
+            )
         );
     }
 
@@ -49,8 +113,10 @@ namespace gf {
         const String &  _FROM
     )
     {
-        return gfUtf8NewFromString(
-            &_FROM
+        return toGfpp(
+            gfUtf8NewFromString(
+                toGf( &_FROM )
+            )
         );
     }
 
@@ -58,8 +124,10 @@ namespace gf {
         const StringChar *  _FROM
     )
     {
-        return gfUtf8NewFromStringCharPtr(
-            _FROM
+        return toGfpp(
+            gfUtf8NewFromStringCharPtr(
+                _FROM
+            )
         );
     }
 
@@ -68,9 +136,11 @@ namespace gf {
         , Size              _length
     )
     {
-        return gfUtf8NewFromStringCharPtrWithLength(
-            _FROM
-            , _length
+        return toGfpp(
+            gfUtf8NewFromStringCharPtrWithLength(
+                _FROM
+                , _length
+            )
         );
     }
 
@@ -78,8 +148,10 @@ namespace gf {
         const Utf16 &   _FROM
     )
     {
-        return gfUtf8NewFromUtf16(
-            &_FROM
+        return toGfpp(
+            gfUtf8NewFromUtf16(
+                toGf( &_FROM )
+            )
         );
     }
 
@@ -87,8 +159,10 @@ namespace gf {
         const Utf16Char *   _FROM
     )
     {
-        return gfUtf8NewFromUtf16CharPtr(
-            _FROM
+        return toGfpp(
+            gfUtf8NewFromUtf16CharPtr(
+                _FROM
+            )
         );
     }
 
@@ -97,9 +171,11 @@ namespace gf {
         , Size              _length
     )
     {
-        return gfUtf8NewFromUtf16CharPtrWithLength(
-            _FROM
-            , _length
+        return toGfpp(
+            gfUtf8NewFromUtf16CharPtrWithLength(
+                _FROM
+                , _length
+            )
         );
     }
 
@@ -107,8 +183,10 @@ namespace gf {
         const Utf32 &   _FROM
     )
     {
-        return gfUtf8NewFromUtf32(
-            &_FROM
+        return toGfpp(
+            gfUtf8NewFromUtf32(
+                toGf( &_FROM )
+            )
         );
     }
 
@@ -116,8 +194,10 @@ namespace gf {
         const Utf32Char *   _FROM
     )
     {
-        return gfUtf8NewFromUtf32CharPtr(
-            _FROM
+        return toGfpp(
+            gfUtf8NewFromUtf32CharPtr(
+                _FROM
+            )
         );
     }
 
@@ -126,9 +206,11 @@ namespace gf {
         , Size              _length
     )
     {
-        return gfUtf8NewFromUtf32CharPtrWithLength(
-            _FROM
-            , _length
+        return toGfpp(
+            gfUtf8NewFromUtf32CharPtrWithLength(
+                _FROM
+                , _length
+            )
         );
     }
 
@@ -137,7 +219,7 @@ namespace gf {
     )
     {
         gfUtf8Free(
-            &_utf8
+            toGf( &_utf8 )
         );
     }
 
@@ -146,7 +228,7 @@ namespace gf {
     )
     {
         return gfUtf8GetPtr(
-            &_UTF8
+            toGf( &_UTF8 )
         );
     }
 
@@ -155,7 +237,7 @@ namespace gf {
     )
     {
         return gfUtf8GetLength(
-            &_UTF8
+            toGf( &_UTF8 )
         );
     }
 
@@ -165,8 +247,8 @@ namespace gf {
     )
     {
         return gfUtf8Assign(
-            &_to
-            , &_FROM
+            toGf( &_to )
+            , toGf( &_FROM )
         );
     }
 
@@ -176,7 +258,7 @@ namespace gf {
     )
     {
         return gfUtf8AssignFromCharPtr(
-            &_to
+            toGf( &_to )
             , _FROM
         );
     }
@@ -188,7 +270,7 @@ namespace gf {
     )
     {
         return gfUtf8AssignFromCharPtrWithLength(
-            &_to
+            toGf( &_to )
             , _FROM
             , _length
         );
@@ -200,8 +282,8 @@ namespace gf {
     )
     {
         return gfUtf8AssignFromString(
-            &_to
-            , &_FROM
+            toGf( &_to )
+            , toGf( &_FROM )
         );
     }
 
@@ -211,7 +293,7 @@ namespace gf {
     )
     {
         return gfUtf8AssignFromStringCharPtr(
-            &_to
+            toGf( &_to )
             , _FROM
         );
     }
@@ -223,7 +305,7 @@ namespace gf {
     )
     {
         return gfUtf8AssignFromStringCharPtrWithLength(
-            &_to
+            toGf( &_to )
             , _FROM
             , _length
         );
@@ -235,8 +317,8 @@ namespace gf {
     )
     {
         return gfUtf8AssignFromUtf16(
-            &_to
-            , &_FROM
+            toGf( &_to )
+            , toGf( &_FROM )
         );
     }
 
@@ -246,7 +328,7 @@ namespace gf {
     )
     {
         return gfUtf8AssignFromUtf16CharPtr(
-            &_to
+            toGf( &_to )
             , _FROM
         );
     }
@@ -258,7 +340,7 @@ namespace gf {
     )
     {
         return gfUtf8AssignFromUtf16CharPtrWithLength(
-            &_to
+            toGf( &_to )
             , _FROM
             , _length
         );
@@ -270,8 +352,8 @@ namespace gf {
     )
     {
         return gfUtf8AssignFromUtf32(
-            &_to
-            , &_FROM
+            toGf( &_to )
+            , toGf( &_FROM )
         );
     }
 
@@ -281,7 +363,7 @@ namespace gf {
     )
     {
         return gfUtf8AssignFromUtf32CharPtr(
-            &_to
+            toGf( &_to )
             , _FROM
         );
     }
@@ -293,7 +375,7 @@ namespace gf {
     )
     {
         return gfUtf8AssignFromUtf32CharPtrWithLength(
-            &_to
+            toGf( &_to )
             , _FROM
             , _length
         );

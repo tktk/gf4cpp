@@ -4,14 +4,72 @@
 #include "gfpp/boot/gameconfig.h"
 #include "gf/boot/gameconfig.h"
 
-#include "gfpp/string/utf32.h"
+namespace gf {
+    inline const GfGameConfig & toGf(
+        const gf::GameConfig &  _GAME_CONFIG
+    )
+    {
+        return reinterpret_cast< const GfGameConfig & >( _GAME_CONFIG );
+    }
+
+    inline GfGameConfig & toGf(
+        gf::GameConfig & _gameConfig
+    )
+    {
+        return reinterpret_cast< GfGameConfig & >( _gameConfig );
+    }
+
+    inline const GfGameConfig * toGf(
+        const gf::GameConfig *  _GAME_CONFIG
+    )
+    {
+        return reinterpret_cast< const GfGameConfig * >( _GAME_CONFIG );
+    }
+
+    inline GfGameConfig * toGf(
+        gf::GameConfig *    _gameConfig
+    )
+    {
+        return reinterpret_cast< GfGameConfig * >( _gameConfig );
+    }
+
+    inline const gf::GameConfig & toGfpp(
+        const GfGameConfig &    _GAME_CONFIG
+    )
+    {
+        return reinterpret_cast< const gf::GameConfig & >( _GAME_CONFIG );
+    }
+
+    inline gf::GameConfig & toGfpp(
+        GfGameConfig &  _gameConfig
+    )
+    {
+        return reinterpret_cast< gf::GameConfig & >( _gameConfig );
+    }
+
+    inline const gf::GameConfig * toGfpp(
+        const GfGameConfig *    _GAME_CONFIG
+    )
+    {
+        return reinterpret_cast< const gf::GameConfig * >( _GAME_CONFIG );
+    }
+
+    inline gf::GameConfig * toGfpp(
+        GfGameConfig *  _gameConfig
+    )
+    {
+        return reinterpret_cast< gf::GameConfig * >( _gameConfig );
+    }
+}
+
+#include "gf4cpp/string/utf32.h"
 #include "gfpp/common/primitives.h"
 
 namespace gf {
     inline GameConfig * newGameConfig(
     )
     {
-        return gfGameConfigNew();
+        return toGfpp( gfGameConfigNew() );
     }
 
     inline void free(
@@ -19,7 +77,7 @@ namespace gf {
     )
     {
         gfGameConfigFree(
-            &_gameConfig
+            toGf( &_gameConfig )
         );
     }
 
@@ -27,8 +85,10 @@ namespace gf {
         const GameConfig &  _GAME_CONFIG
     )
     {
-        return gfGameConfigGetBinDir(
-            &_GAME_CONFIG
+        return toGfpp(
+            gfGameConfigGetBinDir(
+                toGf( &_GAME_CONFIG )
+            )
         );
     }
 
@@ -38,8 +98,8 @@ namespace gf {
     )
     {
         return gfGameConfigSetBinDir(
-            &_gameConfig
-            , &_BIN_DIR
+            toGf( &_gameConfig )
+            , toGf( &_BIN_DIR )
         );
     }
 
@@ -47,8 +107,10 @@ namespace gf {
         const GameConfig &  _GAME_CONFIG
     )
     {
-        return gfGameConfigGetMainFile(
-            &_GAME_CONFIG
+        return toGfpp(
+            gfGameConfigGetMainFile(
+                toGf( &_GAME_CONFIG )
+            )
         );
     }
 
@@ -58,8 +120,8 @@ namespace gf {
     )
     {
         return gfGameConfigSetMainFile(
-            &_gameConfig
-            , &_MAIN_FILE
+            toGf( &_gameConfig )
+            , toGf( &_MAIN_FILE )
         );
     }
 
@@ -67,8 +129,10 @@ namespace gf {
         const GameConfig &  _GAME_CONFIG
     )
     {
-        return gfGameConfigGetMain(
-            &_GAME_CONFIG
+        return toGfpp(
+            gfGameConfigGetMain(
+                toGf( &_GAME_CONFIG )
+            )
         );
     }
 
@@ -78,8 +142,8 @@ namespace gf {
     )
     {
         return gfGameConfigSetMain(
-            &_gameConfig
-            , &_MAIN
+            toGf( &_gameConfig )
+            , toGf( &_MAIN )
         );
     }
 }

@@ -4,7 +4,65 @@
 #include "gfpp/boot/library.h"
 #include "gf/boot/library.h"
 
-#include "gfpp/string/utf32.h"
+namespace gf {
+    inline const GfLibrary & toGf(
+        const gf::Library & _LIBRARY
+    )
+    {
+        return reinterpret_cast< const GfLibrary & >( _LIBRARY );
+    }
+
+    inline GfLibrary & toGf(
+        gf::Library &   _library
+    )
+    {
+        return reinterpret_cast< GfLibrary & >( _library );
+    }
+
+    inline const GfLibrary * toGf(
+        const gf::Library * _LIBRARY
+    )
+    {
+        return reinterpret_cast< const GfLibrary * >( _LIBRARY );
+    }
+
+    inline GfLibrary * toGf(
+        gf::Library *   _library
+    )
+    {
+        return reinterpret_cast< GfLibrary * >( _library );
+    }
+
+    inline const gf::Library & toGfpp(
+        const GfLibrary &   _LIBRARY
+    )
+    {
+        return reinterpret_cast< const gf::Library & >( _LIBRARY );
+    }
+
+    inline gf::Library & toGfpp(
+        GfLibrary & _library
+    )
+    {
+        return reinterpret_cast< gf::Library & >( _library );
+    }
+
+    inline const gf::Library * toGfpp(
+        const GfLibrary *   _LIBRARY
+    )
+    {
+        return reinterpret_cast< const gf::Library * >( _LIBRARY );
+    }
+
+    inline gf::Library * toGfpp(
+        GfLibrary * _library
+    )
+    {
+        return reinterpret_cast< gf::Library * >( _library );
+    }
+}
+
+#include "gf4cpp/string/utf32.h"
 
 namespace gf {
     inline Library * newLibrary(
@@ -12,9 +70,11 @@ namespace gf {
         , const Utf32 & _DIR
     )
     {
-        return gfLibraryNew(
-            &_FILE
-            , &_DIR
+        return toGfpp(
+            gfLibraryNew(
+                toGf( &_FILE )
+                , toGf( &_DIR )
+            )
         );
     }
 
@@ -23,7 +83,7 @@ namespace gf {
     )
     {
         gfLibraryFree(
-            &_library
+            toGf( &_library )
         );
     }
 
@@ -33,8 +93,8 @@ namespace gf {
     )
     {
         return gfLibraryGetAddress(
-            &_library
-            , &_SYMBOL_NAME
+            toGf( &_library )
+            , toGf( &_SYMBOL_NAME )
         );
     }
 }

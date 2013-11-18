@@ -3,7 +3,7 @@
 
 #include "gf/boot/boot.h"
 
-#include "gfpp/boot/gameconfig.h"
+#include "gf4cpp/boot/gameconfig.h"
 #include "gfpp/common/primitives.h"
 
 namespace gf {
@@ -12,7 +12,7 @@ namespace gf {
     )
     {
         return gfBoot(
-            &_GAME_CONFIG
+            toGf( &_GAME_CONFIG )
         );
     }
 }
