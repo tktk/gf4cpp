@@ -1,13 +1,13 @@
-﻿#ifndef SUCROSE4CPP_STRING_UTF32_H
-#define SUCROSE4CPP_STRING_UTF32_H
+﻿#ifndef GF4CPP_STRING_UTF32_H
+#define GF4CPP_STRING_UTF32_H
 
-#include "gf4cpp/string/utf32.h"
+#include "gfpp/string/utf32.h"
 #include "gf/string/utf32.h"
 
-#include "gf4cpp/string/string.h"
-#include "gf4cpp/string/utf8.h"
-#include "gf4cpp/string/utf16.h"
-#include "gf4cpp/common/primitives.h"
+#include "gfpp/string/string.h"
+#include "gfpp/string/utf8.h"
+#include "gfpp/string/utf16.h"
+#include "gfpp/common/primitives.h"
 
 namespace gf {
     inline Utf32 * newUtf32(
@@ -300,4 +300,4 @@ namespace gf {
     }
 }
 
-#endif  // SUCROSE4CPP_STRING_UTF32_H
+#endif  // GF4CPP_STRING_UTF32_H

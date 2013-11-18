@@ -1,10 +1,10 @@
-﻿#ifndef SUCROSE4CPP_BOOT_LIBRARY_H
-#define SUCROSE4CPP_BOOT_LIBRARY_H
+﻿#ifndef GF4CPP_BOOT_LIBRARY_H
+#define GF4CPP_BOOT_LIBRARY_H
 
-#include "gf4cpp/boot/library.h"
+#include "gfpp/boot/library.h"
 #include "gf/boot/library.h"
 
-#include "gf4cpp/string/utf32.h"
+#include "gfpp/string/utf32.h"
 
 namespace gf {
     inline Library * newLibrary(
@@ -39,4 +39,4 @@ namespace gf {
     }
 }
 
-#endif  // SUCROSE4CPP_BOOT_LIBRARY_H
+#endif  // GF4CPP_BOOT_LIBRARY_H

@@ -1,11 +1,11 @@
-﻿#ifndef SUCROSE4CPP_BOOT_GAMECONFIG_H
-#define SUCROSE4CPP_BOOT_GAMECONFIG_H
+﻿#ifndef GF4CPP_BOOT_GAMECONFIG_H
+#define GF4CPP_BOOT_GAMECONFIG_H
 
-#include "gf4cpp/boot/gameconfig.h"
+#include "gfpp/boot/gameconfig.h"
 #include "gf/boot/gameconfig.h"
 
-#include "gf4cpp/string/utf32.h"
-#include "gf4cpp/common/primitives.h"
+#include "gfpp/string/utf32.h"
+#include "gfpp/common/primitives.h"
 
 namespace gf {
     inline GameConfig * newGameConfig(
@@ -84,4 +84,4 @@ namespace gf {
     }
 }
 
-#endif  // SUCROSE4CPP_BOOT_GAMECONFIG_H
+#endif  // GF4CPP_BOOT_GAMECONFIG_H
