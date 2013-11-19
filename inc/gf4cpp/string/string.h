@@ -6,59 +6,59 @@
 
 namespace gf {
     inline const GfString & toGf(
-        const gf::String &  _STRING
+        const String &  _STRING
     )
     {
         return reinterpret_cast< const GfString & >( _STRING );
     }
 
     inline GfString & toGf(
-        gf::String & _string
+        String & _string
     )
     {
         return reinterpret_cast< GfString & >( _string );
     }
 
     inline const GfString * toGf(
-        const gf::String *  _STRING
+        const String *  _STRING
     )
     {
         return reinterpret_cast< const GfString * >( _STRING );
     }
 
     inline GfString * toGf(
-        gf::String *    _string
+        String *    _string
     )
     {
         return reinterpret_cast< GfString * >( _string );
     }
 
-    inline const gf::String & toGfpp(
+    inline const String & toGfpp(
         const GfString &    _STRING
     )
     {
-        return reinterpret_cast< const gf::String & >( _STRING );
+        return reinterpret_cast< const String & >( _STRING );
     }
 
-    inline gf::String & toGfpp(
+    inline String & toGfpp(
         GfString &  _string
     )
     {
-        return reinterpret_cast< gf::String & >( _string );
+        return reinterpret_cast< String & >( _string );
     }
 
-    inline const gf::String * toGfpp(
+    inline const String * toGfpp(
         const GfString *    _STRING
     )
     {
-        return reinterpret_cast< const gf::String * >( _STRING );
+        return reinterpret_cast< const String * >( _STRING );
     }
 
-    inline gf::String * toGfpp(
+    inline String * toGfpp(
         GfString *  _string
     )
     {
-        return reinterpret_cast< gf::String * >( _string );
+        return reinterpret_cast< String * >( _string );
     }
 }
 

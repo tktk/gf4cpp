@@ -6,59 +6,59 @@
 
 namespace gf {
     inline const GfUtf16 & toGf(
-        const gf::Utf16 &   _UTF16
+        const Utf16 &   _UTF16
     )
     {
         return reinterpret_cast< const GfUtf16 & >( _UTF16 );
     }
 
     inline GfUtf16 & toGf(
-        gf::Utf16 & _utf16
+        Utf16 & _utf16
     )
     {
         return reinterpret_cast< GfUtf16 & >( _utf16 );
     }
 
     inline const GfUtf16 * toGf(
-        const gf::Utf16 *   _UTF16
+        const Utf16 *   _UTF16
     )
     {
         return reinterpret_cast< const GfUtf16 * >( _UTF16 );
     }
 
     inline GfUtf16 * toGf(
-        gf::Utf16 * _utf16
+        Utf16 * _utf16
     )
     {
         return reinterpret_cast< GfUtf16 * >( _utf16 );
     }
 
-    inline const gf::Utf16 & toGfpp(
+    inline const Utf16 & toGfpp(
         const GfUtf16 & _UTF16
     )
     {
-        return reinterpret_cast< const gf::Utf16 & >( _UTF16 );
+        return reinterpret_cast< const Utf16 & >( _UTF16 );
     }
 
-    inline gf::Utf16 & toGfpp(
+    inline Utf16 & toGfpp(
         GfUtf16 &   _utf16
     )
     {
-        return reinterpret_cast< gf::Utf16 & >( _utf16 );
+        return reinterpret_cast< Utf16 & >( _utf16 );
     }
 
-    inline const gf::Utf16 * toGfpp(
+    inline const Utf16 * toGfpp(
         const GfUtf16 * _UTF16
     )
     {
-        return reinterpret_cast< const gf::Utf16 * >( _UTF16 );
+        return reinterpret_cast< const Utf16 * >( _UTF16 );
     }
 
-    inline gf::Utf16 * toGfpp(
+    inline Utf16 * toGfpp(
         GfUtf16 *   _utf16
     )
     {
-        return reinterpret_cast< gf::Utf16 * >( _utf16 );
+        return reinterpret_cast< Utf16 * >( _utf16 );
     }
 }
 

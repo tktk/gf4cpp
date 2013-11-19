@@ -6,59 +6,59 @@
 
 namespace gf {
     inline const GfGameConfig & toGf(
-        const gf::GameConfig &  _GAME_CONFIG
+        const GameConfig &  _GAME_CONFIG
     )
     {
         return reinterpret_cast< const GfGameConfig & >( _GAME_CONFIG );
     }
 
     inline GfGameConfig & toGf(
-        gf::GameConfig & _gameConfig
+        GameConfig & _gameConfig
     )
     {
         return reinterpret_cast< GfGameConfig & >( _gameConfig );
     }
 
     inline const GfGameConfig * toGf(
-        const gf::GameConfig *  _GAME_CONFIG
+        const GameConfig *  _GAME_CONFIG
     )
     {
         return reinterpret_cast< const GfGameConfig * >( _GAME_CONFIG );
     }
 
     inline GfGameConfig * toGf(
-        gf::GameConfig *    _gameConfig
+        GameConfig *    _gameConfig
     )
     {
         return reinterpret_cast< GfGameConfig * >( _gameConfig );
     }
 
-    inline const gf::GameConfig & toGfpp(
+    inline const GameConfig & toGfpp(
         const GfGameConfig &    _GAME_CONFIG
     )
     {
-        return reinterpret_cast< const gf::GameConfig & >( _GAME_CONFIG );
+        return reinterpret_cast< const GameConfig & >( _GAME_CONFIG );
     }
 
-    inline gf::GameConfig & toGfpp(
+    inline GameConfig & toGfpp(
         GfGameConfig &  _gameConfig
     )
     {
-        return reinterpret_cast< gf::GameConfig & >( _gameConfig );
+        return reinterpret_cast< GameConfig & >( _gameConfig );
     }
 
-    inline const gf::GameConfig * toGfpp(
+    inline const GameConfig * toGfpp(
         const GfGameConfig *    _GAME_CONFIG
     )
     {
-        return reinterpret_cast< const gf::GameConfig * >( _GAME_CONFIG );
+        return reinterpret_cast< const GameConfig * >( _GAME_CONFIG );
     }
 
-    inline gf::GameConfig * toGfpp(
+    inline GameConfig * toGfpp(
         GfGameConfig *  _gameConfig
     )
     {
-        return reinterpret_cast< gf::GameConfig * >( _gameConfig );
+        return reinterpret_cast< GameConfig * >( _gameConfig );
     }
 }
 

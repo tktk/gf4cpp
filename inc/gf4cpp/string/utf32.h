@@ -6,59 +6,59 @@
 
 namespace gf {
     inline const GfUtf32 & toGf(
-        const gf::Utf32 &   _UTF32
+        const Utf32 &   _UTF32
     )
     {
         return reinterpret_cast< const GfUtf32 & >( _UTF32 );
     }
 
     inline GfUtf32 & toGf(
-        gf::Utf32 & _utf32
+        Utf32 & _utf32
     )
     {
         return reinterpret_cast< GfUtf32 & >( _utf32 );
     }
 
     inline const GfUtf32 * toGf(
-        const gf::Utf32 *   _UTF32
+        const Utf32 *   _UTF32
     )
     {
         return reinterpret_cast< const GfUtf32 * >( _UTF32 );
     }
 
     inline GfUtf32 * toGf(
-        gf::Utf32 * _utf32
+        Utf32 * _utf32
     )
     {
         return reinterpret_cast< GfUtf32 * >( _utf32 );
     }
 
-    inline const gf::Utf32 & toGfpp(
+    inline const Utf32 & toGfpp(
         const GfUtf32 & _UTF32
     )
     {
-        return reinterpret_cast< const gf::Utf32 & >( _UTF32 );
+        return reinterpret_cast< const Utf32 & >( _UTF32 );
     }
 
-    inline gf::Utf32 & toGfpp(
+    inline Utf32 & toGfpp(
         GfUtf32 &   _utf32
     )
     {
-        return reinterpret_cast< gf::Utf32 & >( _utf32 );
+        return reinterpret_cast< Utf32 & >( _utf32 );
     }
 
-    inline const gf::Utf32 * toGfpp(
+    inline const Utf32 * toGfpp(
         const GfUtf32 * _UTF32
     )
     {
-        return reinterpret_cast< const gf::Utf32 * >( _UTF32 );
+        return reinterpret_cast< const Utf32 * >( _UTF32 );
     }
 
-    inline gf::Utf32 * toGfpp(
+    inline Utf32 * toGfpp(
         GfUtf32 *   _utf32
     )
     {
-        return reinterpret_cast< gf::Utf32 * >( _utf32 );
+        return reinterpret_cast< Utf32 * >( _utf32 );
     }
 }
 

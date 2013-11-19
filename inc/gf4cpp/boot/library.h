@@ -6,59 +6,59 @@
 
 namespace gf {
     inline const GfLibrary & toGf(
-        const gf::Library & _LIBRARY
+        const Library & _LIBRARY
     )
     {
         return reinterpret_cast< const GfLibrary & >( _LIBRARY );
     }
 
     inline GfLibrary & toGf(
-        gf::Library &   _library
+        Library &   _library
     )
     {
         return reinterpret_cast< GfLibrary & >( _library );
     }
 
     inline const GfLibrary * toGf(
-        const gf::Library * _LIBRARY
+        const Library * _LIBRARY
     )
     {
         return reinterpret_cast< const GfLibrary * >( _LIBRARY );
     }
 
     inline GfLibrary * toGf(
-        gf::Library *   _library
+        Library *   _library
     )
     {
         return reinterpret_cast< GfLibrary * >( _library );
     }
 
-    inline const gf::Library & toGfpp(
+    inline const Library & toGfpp(
         const GfLibrary &   _LIBRARY
     )
     {
-        return reinterpret_cast< const gf::Library & >( _LIBRARY );
+        return reinterpret_cast< const Library & >( _LIBRARY );
     }
 
-    inline gf::Library & toGfpp(
+    inline Library & toGfpp(
         GfLibrary & _library
     )
     {
-        return reinterpret_cast< gf::Library & >( _library );
+        return reinterpret_cast< Library & >( _library );
     }
 
-    inline const gf::Library * toGfpp(
+    inline const Library * toGfpp(
         const GfLibrary *   _LIBRARY
     )
     {
-        return reinterpret_cast< const gf::Library * >( _LIBRARY );
+        return reinterpret_cast< const Library * >( _LIBRARY );
     }
 
-    inline gf::Library * toGfpp(
+    inline Library * toGfpp(
         GfLibrary * _library
     )
     {
-        return reinterpret_cast< gf::Library * >( _library );
+        return reinterpret_cast< Library * >( _library );
     }
 }
 

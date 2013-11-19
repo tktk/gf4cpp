@@ -6,59 +6,59 @@
 
 namespace gf {
     inline const GfUtf8 & toGf(
-        const gf::Utf8 &    _UTF8
+        const Utf8 &    _UTF8
     )
     {
         return reinterpret_cast< const GfUtf8 & >( _UTF8 );
     }
 
     inline GfUtf8 & toGf(
-        gf::Utf8 &  _utf8
+        Utf8 &  _utf8
     )
     {
         return reinterpret_cast< GfUtf8 & >( _utf8 );
     }
 
     inline const GfUtf8 * toGf(
-        const gf::Utf8 *    _UTF8
+        const Utf8 *    _UTF8
     )
     {
         return reinterpret_cast< const GfUtf8 * >( _UTF8 );
     }
 
     inline GfUtf8 * toGf(
-        gf::Utf8 *  _utf8
+        Utf8 *  _utf8
     )
     {
         return reinterpret_cast< GfUtf8 * >( _utf8 );
     }
 
-    inline const gf::Utf8 & toGfpp(
+    inline const Utf8 & toGfpp(
         const GfUtf8 &  _UTF8
     )
     {
-        return reinterpret_cast< const gf::Utf8 & >( _UTF8 );
+        return reinterpret_cast< const Utf8 & >( _UTF8 );
     }
 
-    inline gf::Utf8 & toGfpp(
+    inline Utf8 & toGfpp(
         GfUtf8 &    _utf8
     )
     {
-        return reinterpret_cast< gf::Utf8 & >( _utf8 );
+        return reinterpret_cast< Utf8 & >( _utf8 );
     }
 
-    inline const gf::Utf8 * toGfpp(
+    inline const Utf8 * toGfpp(
         const GfUtf8 *  _UTF8
     )
     {
-        return reinterpret_cast< const gf::Utf8 * >( _UTF8 );
+        return reinterpret_cast< const Utf8 * >( _UTF8 );
     }
 
-    inline gf::Utf8 * toGfpp(
+    inline Utf8 * toGfpp(
         GfUtf8 *    _utf8
     )
     {
-        return reinterpret_cast< gf::Utf8 * >( _utf8 );
+        return reinterpret_cast< Utf8 * >( _utf8 );
     }
 }
 
