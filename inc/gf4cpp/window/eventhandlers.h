@@ -62,6 +62,7 @@ namespace gf {
     }
 }
 
+#include "gf4cpp/window/window.h"
 #include "gf4cpp/util/import.h"
 
 namespace gf {
@@ -107,6 +108,17 @@ namespace gf {
         );
     }
 
+    inline void callCloseEventHandler(
+        const WindowEventHandlers & _EVENT_HANDLERS
+        , Window &                  _window
+    )
+    {
+        gfWindowEventHandlersCallCloseEventHandler(
+            toGf( &_EVENT_HANDLERS )
+            , toGf( &_window )
+        );
+    }
+
     GF4CPPEXPORT void setPositionEventHandler(
         GfWindowEventHandlers &
         , const WindowPositionEventHandler &
@@ -120,6 +132,21 @@ namespace gf {
         setPositionEventHandler(
             toGf( _eventHandlers )
             , _EVENT_HANDLER
+        );
+    }
+
+    inline void callPositionEventHandler(
+        const WindowEventHandlers & _EVENT_HANDLERS
+        , Window &                  _window
+        , Int                       _x
+        , Int                       _y
+    )
+    {
+        gfWindowEventHandlersCallPositionEventHandler(
+            toGf( &_EVENT_HANDLERS )
+            , toGf( &_window )
+            , _x
+            , _y
         );
     }
 
@@ -139,6 +166,21 @@ namespace gf {
         );
     }
 
+    inline void callSizeEventHandler(
+        const WindowEventHandlers & _EVENT_HANDLERS
+        , Window &                  _window
+        , Int                       _width
+        , Int                       _height
+    )
+    {
+        gfWindowEventHandlersCallSizeEventHandler(
+            toGf( &_EVENT_HANDLERS )
+            , toGf( &_window )
+            , _width
+            , _height
+        );
+    }
+
     GF4CPPEXPORT void setPaintEventHandler(
         GfWindowEventHandlers &
         , const WindowPaintEventHandler &
@@ -152,6 +194,25 @@ namespace gf {
         setPaintEventHandler(
             toGf( _eventHandlers )
             , _EVENT_HANDLER
+        );
+    }
+
+    inline void callPaintEventHandler(
+        const WindowEventHandlers & _EVENT_HANDLERS
+        , Window &                  _window
+        , Int                       _x
+        , Int                       _y
+        , Int                       _width
+        , Int                       _height
+    )
+    {
+        gfWindowEventHandlersCallPaintEventHandler(
+            toGf( &_EVENT_HANDLERS )
+            , toGf( &_window )
+            , _x
+            , _y
+            , _width
+            , _height
         );
     }
 }
