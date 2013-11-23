@@ -33,6 +33,13 @@ namespace gf {
     {
     }
 
+    void setKeyEventHandler(
+        GfWindowEventHandlers &
+        , const WindowKeyEventHandler &
+    )
+    {
+    }
+
     void setMouseButtonEventHandler(
         GfWindowEventHandlers &
         , const WindowMouseButtonEventHandler &
