@@ -215,6 +215,68 @@ namespace gf {
             , _height
         );
     }
+
+    GF4CPPEXPORT void setMouseButtonEventHandler(
+        GfWindowEventHandlers &
+        , const WindowMouseButtonEventHandler &
+    );
+
+    inline void setMouseButtonEventHandler(
+        WindowEventHandlers &                   _eventHandlers
+        , const WindowMouseButtonEventHandler & _EVENT_HANDLER
+    )
+    {
+        setMouseButtonEventHandler(
+            toGf( _eventHandlers )
+            , _EVENT_HANDLER
+        );
+    }
+
+    inline void callMouseButtonEventHandler(
+        const WindowEventHandlers & _EVENT_HANDLERS
+        , Window &                  _window
+        , ULong                     _index
+        , Bool                      _pressed
+    )
+    {
+        gfWindowEventHandlersCallMouseButtonEventHandler(
+            toGf( &_EVENT_HANDLERS )
+            , toGf( &_window )
+            , _index
+            , _pressed
+        );
+    }
+
+    GF4CPPEXPORT void setMouseMotionEventHandler(
+        GfWindowEventHandlers &
+        , const WindowMouseMotionEventHandler &
+    );
+
+    inline void setMouseMotionEventHandler(
+        WindowEventHandlers &                   _eventHandlers
+        , const WindowMouseMotionEventHandler & _EVENT_HANDLER
+    )
+    {
+        setMouseMotionEventHandler(
+            toGf( _eventHandlers )
+            , _EVENT_HANDLER
+        );
+    }
+
+    inline void callMouseMotionEventHandler(
+        const WindowEventHandlers & _EVENT_HANDLERS
+        , Window &                  _window
+        , Int                       _x
+        , Int                       _y
+    )
+    {
+        gfWindowEventHandlersCallMouseMotionEventHandler(
+            toGf( &_EVENT_HANDLERS )
+            , toGf( &_window )
+            , _x
+            , _y
+        );
+    }
 }
 
 #endif  // GF4CPP_WINDOW_EVENTHANDLERS_H
