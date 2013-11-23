@@ -271,6 +271,8 @@ namespace gf {
         , Window &                  _window
         , ULong                     _index
         , Bool                      _pressed
+        , Int                       _x
+        , Int                       _y
     )
     {
         gfWindowEventHandlersCallMouseButtonEventHandler(
@@ -278,6 +280,8 @@ namespace gf {
             , toGf( &_window )
             , _index
             , _pressed
+            , _x
+            , _y
         );
     }
 
