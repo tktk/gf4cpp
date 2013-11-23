@@ -32,4 +32,18 @@ namespace gf {
     )
     {
     }
+
+    void setMouseButtonEventHandler(
+        GfWindowEventHandlers &
+        , const WindowMouseButtonEventHandler &
+    )
+    {
+    }
+
+    void setMouseMotionEventHandler(
+        GfWindowEventHandlers &
+        , const WindowMouseMotionEventHandler &
+    )
+    {
+    }
 }
