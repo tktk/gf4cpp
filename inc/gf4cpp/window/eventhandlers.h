@@ -63,6 +63,7 @@ namespace gf {
 }
 
 #include "gf4cpp/window/window.h"
+#include "gf4cpp/window/key.h"
 #include "gf4cpp/util/import.h"
 
 namespace gf {
@@ -213,6 +214,39 @@ namespace gf {
             , _y
             , _width
             , _height
+        );
+    }
+
+    GF4CPPEXPORT void setKeyEventHandler(
+        GfWindowEventHandlers &
+        , const WindowKeyEventHandler &
+    );
+
+    inline void setKeyEventHandler(
+        WindowEventHandlers &           _eventHandlers
+        , const WindowKeyEventHandler & _EVENT_HANDLER
+    )
+    {
+        setKeyEventHandler(
+            toGf( _eventHandlers )
+            , _EVENT_HANDLER
+        );
+    }
+
+    inline void callKeyEventHandler(
+        const WindowEventHandlers & _EVENT_HANDLERS
+        , Window &                  _window
+        , Key                       _key
+        , const Utf32Char *         _CHAR_PTR
+        , Bool                      _pressed
+    )
+    {
+        gfWindowEventHandlersCallKeyEventHandler(
+            toGf( &_EVENT_HANDLERS )
+            , toGf( &_window )
+            , toGf( _key )
+            , _CHAR_PTR
+            , _pressed
         );
     }
 
