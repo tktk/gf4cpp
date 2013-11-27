@@ -1,85 +1,85 @@
-﻿#ifndef GF4CPP_WINDOW_EVENTHANDLERS_H
-#define GF4CPP_WINDOW_EVENTHANDLERS_H
+﻿#ifndef FG4CPP_WINDOW_EVENTHANDLERS_H
+#define FG4CPP_WINDOW_EVENTHANDLERS_H
 
-#include "gfpp/window/eventhandlers.h"
-#include "gf/window/eventhandlers.h"
+#include "fgpp/window/eventhandlers.h"
+#include "fg/window/eventhandlers.h"
 
-namespace gf {
-    inline const GfWindowEventHandlers & toGf(
+namespace fg {
+    inline const FgWindowEventHandlers & toFg(
         const WindowEventHandlers & _EVENT_HANDLERS
     )
     {
-        return reinterpret_cast< const GfWindowEventHandlers & >( _EVENT_HANDLERS );
+        return reinterpret_cast< const FgWindowEventHandlers & >( _EVENT_HANDLERS );
     }
 
-    inline GfWindowEventHandlers & toGf(
+    inline FgWindowEventHandlers & toFg(
         WindowEventHandlers &   _eventHandlers
     )
     {
-        return reinterpret_cast< GfWindowEventHandlers & >( _eventHandlers );
+        return reinterpret_cast< FgWindowEventHandlers & >( _eventHandlers );
     }
 
-    inline const GfWindowEventHandlers * toGf(
+    inline const FgWindowEventHandlers * toFg(
         const WindowEventHandlers * _EVENT_HANDLERS
     )
     {
-        return reinterpret_cast< const GfWindowEventHandlers * >( _EVENT_HANDLERS );
+        return reinterpret_cast< const FgWindowEventHandlers * >( _EVENT_HANDLERS );
     }
 
-    inline GfWindowEventHandlers * toGf(
+    inline FgWindowEventHandlers * toFg(
         WindowEventHandlers *   _eventHandlers
     )
     {
-        return reinterpret_cast< GfWindowEventHandlers * >( _eventHandlers );
+        return reinterpret_cast< FgWindowEventHandlers * >( _eventHandlers );
     }
 
-    inline const WindowEventHandlers & toGfpp(
-        const GfWindowEventHandlers &   _EVENT_HANDLERS
+    inline const WindowEventHandlers & toFgpp(
+        const FgWindowEventHandlers &   _EVENT_HANDLERS
     )
     {
         return reinterpret_cast< const WindowEventHandlers & >( _EVENT_HANDLERS );
     }
 
-    inline WindowEventHandlers & toGfpp(
-        GfWindowEventHandlers & _eventHandlers
+    inline WindowEventHandlers & toFgpp(
+        FgWindowEventHandlers & _eventHandlers
     )
     {
         return reinterpret_cast< WindowEventHandlers & >( _eventHandlers );
     }
 
-    inline const WindowEventHandlers * toGfpp(
-        const GfWindowEventHandlers *   _EVENT_HANDLERS
+    inline const WindowEventHandlers * toFgpp(
+        const FgWindowEventHandlers *   _EVENT_HANDLERS
     )
     {
         return reinterpret_cast< const WindowEventHandlers * >( _EVENT_HANDLERS );
     }
 
-    inline WindowEventHandlers * toGfpp(
-        GfWindowEventHandlers * _eventHandlers
+    inline WindowEventHandlers * toFgpp(
+        FgWindowEventHandlers * _eventHandlers
     )
     {
         return reinterpret_cast< WindowEventHandlers * >( _eventHandlers );
     }
 }
 
-#include "gf4cpp/window/window.h"
-#include "gf4cpp/window/key.h"
-#include "gf4cpp/util/import.h"
+#include "fg4cpp/window/window.h"
+#include "fg4cpp/window/key.h"
+#include "fg4cpp/util/import.h"
 
-namespace gf {
+namespace fg {
     inline WindowEventHandlers * newWindowEventHandlers(
     )
     {
-        return toGfpp( gfWindowEventHandlersNew() );
+        return toFgpp( fgWindowEventHandlersNew() );
     }
 
     inline WindowEventHandlers * clone(
         const WindowEventHandlers & _EVENT_HANDLERS
     )
     {
-        return toGfpp(
-            gfWindowEventHandlersClone(
-                toGf( &_EVENT_HANDLERS )
+        return toFgpp(
+            fgWindowEventHandlersClone(
+                toFg( &_EVENT_HANDLERS )
             )
         );
     }
@@ -88,13 +88,13 @@ namespace gf {
         WindowEventHandlers &   _eventHandlers
     )
     {
-        gfWindowEventHandlersFree(
-            toGf( &_eventHandlers )
+        fgWindowEventHandlersFree(
+            toFg( &_eventHandlers )
         );
     }
 
-    GF4CPPEXPORT void setCloseEventHandler(
-        GfWindowEventHandlers &
+    FG4CPPEXPORT void setCloseEventHandler(
+        FgWindowEventHandlers &
         , const WindowCloseEventHandler &
     );
 
@@ -104,7 +104,7 @@ namespace gf {
     )
     {
         setCloseEventHandler(
-            toGf( _eventHandlers )
+            toFg( _eventHandlers )
             , _EVENT_HANDLER
         );
     }
@@ -114,14 +114,14 @@ namespace gf {
         , Window &                  _window
     )
     {
-        gfWindowEventHandlersCallCloseEventHandler(
-            toGf( &_EVENT_HANDLERS )
-            , toGf( &_window )
+        fgWindowEventHandlersCallCloseEventHandler(
+            toFg( &_EVENT_HANDLERS )
+            , toFg( &_window )
         );
     }
 
-    GF4CPPEXPORT void setPositionEventHandler(
-        GfWindowEventHandlers &
+    FG4CPPEXPORT void setPositionEventHandler(
+        FgWindowEventHandlers &
         , const WindowPositionEventHandler &
     );
 
@@ -131,7 +131,7 @@ namespace gf {
     )
     {
         setPositionEventHandler(
-            toGf( _eventHandlers )
+            toFg( _eventHandlers )
             , _EVENT_HANDLER
         );
     }
@@ -143,16 +143,16 @@ namespace gf {
         , Int                       _y
     )
     {
-        gfWindowEventHandlersCallPositionEventHandler(
-            toGf( &_EVENT_HANDLERS )
-            , toGf( &_window )
+        fgWindowEventHandlersCallPositionEventHandler(
+            toFg( &_EVENT_HANDLERS )
+            , toFg( &_window )
             , _x
             , _y
         );
     }
 
-    GF4CPPEXPORT void setSizeEventHandler(
-        GfWindowEventHandlers &
+    FG4CPPEXPORT void setSizeEventHandler(
+        FgWindowEventHandlers &
         , const WindowSizeEventHandler &
     );
 
@@ -162,7 +162,7 @@ namespace gf {
     )
     {
         setSizeEventHandler(
-            toGf( _eventHandlers )
+            toFg( _eventHandlers )
             , _EVENT_HANDLER
         );
     }
@@ -174,16 +174,16 @@ namespace gf {
         , Int                       _height
     )
     {
-        gfWindowEventHandlersCallSizeEventHandler(
-            toGf( &_EVENT_HANDLERS )
-            , toGf( &_window )
+        fgWindowEventHandlersCallSizeEventHandler(
+            toFg( &_EVENT_HANDLERS )
+            , toFg( &_window )
             , _width
             , _height
         );
     }
 
-    GF4CPPEXPORT void setPaintEventHandler(
-        GfWindowEventHandlers &
+    FG4CPPEXPORT void setPaintEventHandler(
+        FgWindowEventHandlers &
         , const WindowPaintEventHandler &
     );
 
@@ -193,7 +193,7 @@ namespace gf {
     )
     {
         setPaintEventHandler(
-            toGf( _eventHandlers )
+            toFg( _eventHandlers )
             , _EVENT_HANDLER
         );
     }
@@ -207,9 +207,9 @@ namespace gf {
         , Int                       _height
     )
     {
-        gfWindowEventHandlersCallPaintEventHandler(
-            toGf( &_EVENT_HANDLERS )
-            , toGf( &_window )
+        fgWindowEventHandlersCallPaintEventHandler(
+            toFg( &_EVENT_HANDLERS )
+            , toFg( &_window )
             , _x
             , _y
             , _width
@@ -217,8 +217,8 @@ namespace gf {
         );
     }
 
-    GF4CPPEXPORT void setKeyEventHandler(
-        GfWindowEventHandlers &
+    FG4CPPEXPORT void setKeyEventHandler(
+        FgWindowEventHandlers &
         , const WindowKeyEventHandler &
     );
 
@@ -228,7 +228,7 @@ namespace gf {
     )
     {
         setKeyEventHandler(
-            toGf( _eventHandlers )
+            toFg( _eventHandlers )
             , _EVENT_HANDLER
         );
     }
@@ -241,17 +241,17 @@ namespace gf {
         , Bool                      _pressed
     )
     {
-        gfWindowEventHandlersCallKeyEventHandler(
-            toGf( &_EVENT_HANDLERS )
-            , toGf( &_window )
-            , toGf( _key )
+        fgWindowEventHandlersCallKeyEventHandler(
+            toFg( &_EVENT_HANDLERS )
+            , toFg( &_window )
+            , toFg( _key )
             , _CHAR_PTR
             , _pressed
         );
     }
 
-    GF4CPPEXPORT void setMouseButtonEventHandler(
-        GfWindowEventHandlers &
+    FG4CPPEXPORT void setMouseButtonEventHandler(
+        FgWindowEventHandlers &
         , const WindowMouseButtonEventHandler &
     );
 
@@ -261,7 +261,7 @@ namespace gf {
     )
     {
         setMouseButtonEventHandler(
-            toGf( _eventHandlers )
+            toFg( _eventHandlers )
             , _EVENT_HANDLER
         );
     }
@@ -275,9 +275,9 @@ namespace gf {
         , Int                       _y
     )
     {
-        gfWindowEventHandlersCallMouseButtonEventHandler(
-            toGf( &_EVENT_HANDLERS )
-            , toGf( &_window )
+        fgWindowEventHandlersCallMouseButtonEventHandler(
+            toFg( &_EVENT_HANDLERS )
+            , toFg( &_window )
             , _index
             , _pressed
             , _x
@@ -285,8 +285,8 @@ namespace gf {
         );
     }
 
-    GF4CPPEXPORT void setMouseMotionEventHandler(
-        GfWindowEventHandlers &
+    FG4CPPEXPORT void setMouseMotionEventHandler(
+        FgWindowEventHandlers &
         , const WindowMouseMotionEventHandler &
     );
 
@@ -296,7 +296,7 @@ namespace gf {
     )
     {
         setMouseMotionEventHandler(
-            toGf( _eventHandlers )
+            toFg( _eventHandlers )
             , _EVENT_HANDLER
         );
     }
@@ -308,13 +308,13 @@ namespace gf {
         , Int                       _y
     )
     {
-        gfWindowEventHandlersCallMouseMotionEventHandler(
-            toGf( &_EVENT_HANDLERS )
-            , toGf( &_window )
+        fgWindowEventHandlersCallMouseMotionEventHandler(
+            toFg( &_EVENT_HANDLERS )
+            , toFg( &_window )
             , _x
             , _y
         );
     }
 }
 
-#endif  // GF4CPP_WINDOW_EVENTHANDLERS_H
+#endif  // FG4CPP_WINDOW_EVENTHANDLERS_H

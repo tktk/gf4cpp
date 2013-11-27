@@ -4,11 +4,11 @@ from . import common
 
 import os.path
 
-GF_HEADERS = 'gfheaders'
-_GF_DIR = 'gf'
+FG_HEADERS = 'fgheaders'
+_FG_DIR = 'fg'
 
-GFPP_HEADERS = 'gfppheaders'
-_GFPP_DIR = 'gfpp'
+FGPP_HEADERS = 'fgppheaders'
+_FGPP_DIR = 'fgpp'
 
 OS = 'os'
 
@@ -30,19 +30,19 @@ _TYPE_STRING = 'string'
 VALUE = 'value'
 
 OPTIONS = {
-    GF_HEADERS : {
+    FG_HEADERS : {
         TYPE : _TYPE_STRING,
         VALUE : os.path.join(
             '..',
-            _GF_DIR,
+            _FG_DIR,
             common.INCLUDE_DIR,
         ),
     },
-    GFPP_HEADERS : {
+    FGPP_HEADERS : {
         TYPE : _TYPE_STRING,
         VALUE : os.path.join(
             '..',
-            _GFPP_DIR,
+            _FGPP_DIR,
             common.INCLUDE_DIR,
         ),
     },

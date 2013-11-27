@@ -1,54 +1,54 @@
-﻿#include "gf4cpp/util/import.h"
-#include "gf4cpp/window/eventhandlers.h"
+﻿#include "fg4cpp/util/import.h"
+#include "fg4cpp/window/eventhandlers.h"
 
-#include "gf/window/eventhandlers.h"
-#include "gfpp/window/eventhandlers.h"
+#include "fg/window/eventhandlers.h"
+#include "fgpp/window/eventhandlers.h"
 
-namespace gf {
+namespace fg {
     void setCloseEventHandler(
-        GfWindowEventHandlers &
+        FgWindowEventHandlers &
         , const WindowCloseEventHandler &
     )
     {
     }
 
     void setPositionEventHandler(
-        GfWindowEventHandlers &
+        FgWindowEventHandlers &
         , const WindowPositionEventHandler &
     )
     {
     }
 
     void setSizeEventHandler(
-        GfWindowEventHandlers &
+        FgWindowEventHandlers &
         , const WindowSizeEventHandler &
     )
     {
     }
 
     void setPaintEventHandler(
-        GfWindowEventHandlers &
+        FgWindowEventHandlers &
         , const WindowPaintEventHandler &
     )
     {
     }
 
     void setKeyEventHandler(
-        GfWindowEventHandlers &
+        FgWindowEventHandlers &
         , const WindowKeyEventHandler &
     )
     {
     }
 
     void setMouseButtonEventHandler(
-        GfWindowEventHandlers &
+        FgWindowEventHandlers &
         , const WindowMouseButtonEventHandler &
     )
     {
     }
 
     void setMouseMotionEventHandler(
-        GfWindowEventHandlers &
+        FgWindowEventHandlers &
         , const WindowMouseMotionEventHandler &
     )
     {

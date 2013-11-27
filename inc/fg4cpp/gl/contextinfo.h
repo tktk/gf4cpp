@@ -1,83 +1,83 @@
-﻿#ifndef GF4CPP_GL_CONTEXTINFO_H
-#define GF4CPP_GL_CONTEXTINFO_H
+﻿#ifndef FG4CPP_GL_CONTEXTINFO_H
+#define FG4CPP_GL_CONTEXTINFO_H
 
-#include "gfpp/gl/contextinfo.h"
-#include "gf/gl/contextinfo.h"
+#include "fgpp/gl/contextinfo.h"
+#include "fg/gl/contextinfo.h"
 
-namespace gf {
-    inline const GfGLContextInfo & toGf(
+namespace fg {
+    inline const FgGLContextInfo & toFg(
         const GLContextInfo &   _INFO
     )
     {
-        return reinterpret_cast< const GfGLContextInfo & >( _INFO );
+        return reinterpret_cast< const FgGLContextInfo & >( _INFO );
     }
 
-    inline GfGLContextInfo & toGf(
+    inline FgGLContextInfo & toFg(
         GLContextInfo & _info
     )
     {
-        return reinterpret_cast< GfGLContextInfo & >( _info );
+        return reinterpret_cast< FgGLContextInfo & >( _info );
     }
 
-    inline const GfGLContextInfo * toGf(
+    inline const FgGLContextInfo * toFg(
         const GLContextInfo *   _INFO
     )
     {
-        return reinterpret_cast< const GfGLContextInfo * >( _INFO );
+        return reinterpret_cast< const FgGLContextInfo * >( _INFO );
     }
 
-    inline GfGLContextInfo * toGf(
+    inline FgGLContextInfo * toFg(
         GLContextInfo * _info
     )
     {
-        return reinterpret_cast< GfGLContextInfo * >( _info );
+        return reinterpret_cast< FgGLContextInfo * >( _info );
     }
 
-    inline const GLContextInfo & toGfpp(
-        const GfGLContextInfo & _INFO
+    inline const GLContextInfo & toFgpp(
+        const FgGLContextInfo & _INFO
     )
     {
         return reinterpret_cast< const GLContextInfo & >( _INFO );
     }
 
-    inline GLContextInfo & toGfpp(
-        GfGLContextInfo &   _info
+    inline GLContextInfo & toFgpp(
+        FgGLContextInfo &   _info
     )
     {
         return reinterpret_cast< GLContextInfo & >( _info );
     }
 
-    inline const GLContextInfo * toGfpp(
-        const GfGLContextInfo * _INFO
+    inline const GLContextInfo * toFgpp(
+        const FgGLContextInfo * _INFO
     )
     {
         return reinterpret_cast< const GLContextInfo * >( _INFO );
     }
 
-    inline GLContextInfo * toGfpp(
-        GfGLContextInfo *   _info
+    inline GLContextInfo * toFgpp(
+        FgGLContextInfo *   _info
     )
     {
         return reinterpret_cast< GLContextInfo * >( _info );
     }
 }
 
-#include "gfpp/common/primitives.h"
+#include "fgpp/common/primitives.h"
 
-namespace gf {
+namespace fg {
     inline GLContextInfo * newGLContextInfo(
     )
     {
-        return toGfpp( gfGLContextInfoNew() );
+        return toFgpp( fgGLContextInfoNew() );
     }
 
     inline GLContextInfo * clone(
         const GLContextInfo &   _INFO
     )
     {
-        return toGfpp(
-            gfGLContextInfoClone(
-                toGf( &_INFO )
+        return toFgpp(
+            fgGLContextInfoClone(
+                toFg( &_INFO )
             )
         );
     }
@@ -86,15 +86,15 @@ namespace gf {
         GLContextInfo & _info
     )
     {
-        gfGLContextInfoFree( toGf( &_info ) );
+        fgGLContextInfoFree( toFg( &_info ) );
     }
 
     inline Bool getDoubleBuffer(
         const GLContextInfo &   _INFO
     )
     {
-        return gfGLContextInfoGetDoubleBuffer(
-            toGf( &_INFO )
+        return fgGLContextInfoGetDoubleBuffer(
+            toFg( &_INFO )
         );
     }
 
@@ -103,8 +103,8 @@ namespace gf {
         , Bool          _doubleBuffer
     )
     {
-        gfGLContextInfoSetDoubleBuffer(
-            toGf( &_info )
+        fgGLContextInfoSetDoubleBuffer(
+            toFg( &_info )
             , _doubleBuffer
         );
     }
@@ -113,8 +113,8 @@ namespace gf {
         const GLContextInfo &   _INFO
     )
     {
-        return gfGLContextInfoExistsAuxBuffers(
-            toGf( &_INFO )
+        return fgGLContextInfoExistsAuxBuffers(
+            toFg( &_INFO )
         );
     }
 
@@ -122,8 +122,8 @@ namespace gf {
         const GLContextInfo &   _INFO
     )
     {
-        return gfGLContextInfoGetAuxBuffers(
-            toGf( &_INFO )
+        return fgGLContextInfoGetAuxBuffers(
+            toFg( &_INFO )
         );
     }
 
@@ -132,8 +132,8 @@ namespace gf {
         , Int           _auxBuffers
     )
     {
-        gfGLContextInfoSetAuxBuffers(
-            toGf( &_info )
+        fgGLContextInfoSetAuxBuffers(
+            toFg( &_info )
             , _auxBuffers
         );
     }
@@ -142,8 +142,8 @@ namespace gf {
         GLContextInfo & _info
     )
     {
-        gfGLContextInfoClearAuxBuffers(
-            toGf( &_info )
+        fgGLContextInfoClearAuxBuffers(
+            toFg( &_info )
         );
     }
 
@@ -151,8 +151,8 @@ namespace gf {
         const GLContextInfo &   _INFO
     )
     {
-        return gfGLContextInfoExistsRedBits(
-            toGf( &_INFO )
+        return fgGLContextInfoExistsRedBits(
+            toFg( &_INFO )
         );
     }
 
@@ -160,8 +160,8 @@ namespace gf {
         const GLContextInfo &   _INFO
     )
     {
-        return gfGLContextInfoGetRedBits(
-            toGf( &_INFO )
+        return fgGLContextInfoGetRedBits(
+            toFg( &_INFO )
         );
     }
 
@@ -170,8 +170,8 @@ namespace gf {
         , Int           _redBits
     )
     {
-        gfGLContextInfoSetRedBits(
-            toGf( &_info )
+        fgGLContextInfoSetRedBits(
+            toFg( &_info )
             , _redBits
         );
     }
@@ -180,8 +180,8 @@ namespace gf {
         GLContextInfo & _info
     )
     {
-        gfGLContextInfoClearRedBits(
-            toGf( &_info )
+        fgGLContextInfoClearRedBits(
+            toFg( &_info )
         );
     }
 
@@ -189,8 +189,8 @@ namespace gf {
         const GLContextInfo &   _INFO
     )
     {
-        return gfGLContextInfoExistsGreenBits(
-            toGf( &_INFO )
+        return fgGLContextInfoExistsGreenBits(
+            toFg( &_INFO )
         );
     }
 
@@ -198,8 +198,8 @@ namespace gf {
         const GLContextInfo &   _INFO
     )
     {
-        return gfGLContextInfoGetGreenBits(
-            toGf( &_INFO )
+        return fgGLContextInfoGetGreenBits(
+            toFg( &_INFO )
         );
     }
 
@@ -208,8 +208,8 @@ namespace gf {
         , Int           _greenBits
     )
     {
-        gfGLContextInfoSetGreenBits(
-            toGf( &_info )
+        fgGLContextInfoSetGreenBits(
+            toFg( &_info )
             , _greenBits
         );
     }
@@ -218,8 +218,8 @@ namespace gf {
         GLContextInfo & _info
     )
     {
-        gfGLContextInfoClearGreenBits(
-            toGf( &_info )
+        fgGLContextInfoClearGreenBits(
+            toFg( &_info )
         );
     }
 
@@ -227,8 +227,8 @@ namespace gf {
         const GLContextInfo &   _INFO
     )
     {
-        return gfGLContextInfoExistsBlueBits(
-            toGf( &_INFO )
+        return fgGLContextInfoExistsBlueBits(
+            toFg( &_INFO )
         );
     }
 
@@ -236,8 +236,8 @@ namespace gf {
         const GLContextInfo &   _INFO
     )
     {
-        return gfGLContextInfoGetBlueBits(
-            toGf( &_INFO )
+        return fgGLContextInfoGetBlueBits(
+            toFg( &_INFO )
         );
     }
 
@@ -246,8 +246,8 @@ namespace gf {
         , Int           _blueBits
     )
     {
-        gfGLContextInfoSetBlueBits(
-            toGf( &_info )
+        fgGLContextInfoSetBlueBits(
+            toFg( &_info )
             , _blueBits
         );
     }
@@ -256,8 +256,8 @@ namespace gf {
         GLContextInfo & _info
     )
     {
-        gfGLContextInfoClearBlueBits(
-            toGf( &_info )
+        fgGLContextInfoClearBlueBits(
+            toFg( &_info )
         );
     }
 
@@ -265,8 +265,8 @@ namespace gf {
         const GLContextInfo &   _INFO
     )
     {
-        return gfGLContextInfoExistsAlphaBits(
-            toGf( &_INFO )
+        return fgGLContextInfoExistsAlphaBits(
+            toFg( &_INFO )
         );
     }
 
@@ -274,8 +274,8 @@ namespace gf {
         const GLContextInfo &   _INFO
     )
     {
-        return gfGLContextInfoGetAlphaBits(
-            toGf( &_INFO )
+        return fgGLContextInfoGetAlphaBits(
+            toFg( &_INFO )
         );
     }
 
@@ -284,8 +284,8 @@ namespace gf {
         , Int           _alphaBits
     )
     {
-        gfGLContextInfoSetAlphaBits(
-            toGf( &_info )
+        fgGLContextInfoSetAlphaBits(
+            toFg( &_info )
             , _alphaBits
         );
     }
@@ -294,8 +294,8 @@ namespace gf {
         GLContextInfo & _info
     )
     {
-        gfGLContextInfoClearAlphaBits(
-            toGf( &_info )
+        fgGLContextInfoClearAlphaBits(
+            toFg( &_info )
         );
     }
 
@@ -303,8 +303,8 @@ namespace gf {
         const GLContextInfo &   _INFO
     )
     {
-        return gfGLContextInfoExistsDepthBits(
-            toGf( &_INFO )
+        return fgGLContextInfoExistsDepthBits(
+            toFg( &_INFO )
         );
     }
 
@@ -312,8 +312,8 @@ namespace gf {
         const GLContextInfo &   _INFO
     )
     {
-        return gfGLContextInfoGetDepthBits(
-            toGf( &_INFO )
+        return fgGLContextInfoGetDepthBits(
+            toFg( &_INFO )
         );
     }
 
@@ -322,8 +322,8 @@ namespace gf {
         , Int           _depthBits
     )
     {
-        gfGLContextInfoSetDepthBits(
-            toGf( &_info )
+        fgGLContextInfoSetDepthBits(
+            toFg( &_info )
             , _depthBits
         );
     }
@@ -332,8 +332,8 @@ namespace gf {
         GLContextInfo & _info
     )
     {
-        gfGLContextInfoClearDepthBits(
-            toGf( &_info )
+        fgGLContextInfoClearDepthBits(
+            toFg( &_info )
         );
     }
 
@@ -341,8 +341,8 @@ namespace gf {
         const GLContextInfo &   _INFO
     )
     {
-        return gfGLContextInfoExistsStencilBits(
-            toGf( &_INFO )
+        return fgGLContextInfoExistsStencilBits(
+            toFg( &_INFO )
         );
     }
 
@@ -350,8 +350,8 @@ namespace gf {
         const GLContextInfo &   _INFO
     )
     {
-        return gfGLContextInfoGetStencilBits(
-            toGf( &_INFO )
+        return fgGLContextInfoGetStencilBits(
+            toFg( &_INFO )
         );
     }
 
@@ -360,8 +360,8 @@ namespace gf {
         , Int           _stencilBits
     )
     {
-        gfGLContextInfoSetStencilBits(
-            toGf( &_info )
+        fgGLContextInfoSetStencilBits(
+            toFg( &_info )
             , _stencilBits
         );
     }
@@ -370,8 +370,8 @@ namespace gf {
         GLContextInfo & _info
     )
     {
-        gfGLContextInfoClearStencilBits(
-            toGf( &_info )
+        fgGLContextInfoClearStencilBits(
+            toFg( &_info )
         );
     }
 
@@ -379,8 +379,8 @@ namespace gf {
         const GLContextInfo &   _INFO
     )
     {
-        return gfGLContextInfoExistsAccumRedBits(
-            toGf( &_INFO )
+        return fgGLContextInfoExistsAccumRedBits(
+            toFg( &_INFO )
         );
     }
 
@@ -388,8 +388,8 @@ namespace gf {
         const GLContextInfo &   _INFO
     )
     {
-        return gfGLContextInfoGetAccumRedBits(
-            toGf( &_INFO )
+        return fgGLContextInfoGetAccumRedBits(
+            toFg( &_INFO )
         );
     }
 
@@ -398,8 +398,8 @@ namespace gf {
         , Int           _accumRedBits
     )
     {
-        gfGLContextInfoSetAccumRedBits(
-            toGf( &_info )
+        fgGLContextInfoSetAccumRedBits(
+            toFg( &_info )
             , _accumRedBits
         );
     }
@@ -408,8 +408,8 @@ namespace gf {
         GLContextInfo & _info
     )
     {
-        gfGLContextInfoClearAccumRedBits(
-            toGf( &_info )
+        fgGLContextInfoClearAccumRedBits(
+            toFg( &_info )
         );
     }
 
@@ -417,8 +417,8 @@ namespace gf {
         const GLContextInfo &   _INFO
     )
     {
-        return gfGLContextInfoExistsAccumGreenBits(
-            toGf( &_INFO )
+        return fgGLContextInfoExistsAccumGreenBits(
+            toFg( &_INFO )
         );
     }
 
@@ -426,8 +426,8 @@ namespace gf {
         const GLContextInfo &   _INFO
     )
     {
-        return gfGLContextInfoGetAccumGreenBits(
-            toGf( &_INFO )
+        return fgGLContextInfoGetAccumGreenBits(
+            toFg( &_INFO )
         );
     }
 
@@ -436,8 +436,8 @@ namespace gf {
         , Int           _accumGreenBits
     )
     {
-        gfGLContextInfoSetAccumGreenBits(
-            toGf( &_info )
+        fgGLContextInfoSetAccumGreenBits(
+            toFg( &_info )
             , _accumGreenBits
         );
     }
@@ -446,8 +446,8 @@ namespace gf {
         GLContextInfo & _info
     )
     {
-        gfGLContextInfoClearAccumGreenBits(
-            toGf( &_info )
+        fgGLContextInfoClearAccumGreenBits(
+            toFg( &_info )
         );
     }
 
@@ -455,8 +455,8 @@ namespace gf {
         const GLContextInfo &   _INFO
     )
     {
-        return gfGLContextInfoExistsAccumBlueBits(
-            toGf( &_INFO )
+        return fgGLContextInfoExistsAccumBlueBits(
+            toFg( &_INFO )
         );
     }
 
@@ -464,8 +464,8 @@ namespace gf {
         const GLContextInfo &   _INFO
     )
     {
-        return gfGLContextInfoGetAccumBlueBits(
-            toGf( &_INFO )
+        return fgGLContextInfoGetAccumBlueBits(
+            toFg( &_INFO )
         );
     }
 
@@ -474,8 +474,8 @@ namespace gf {
         , Int           _accumBlueBits
     )
     {
-        gfGLContextInfoSetAccumBlueBits(
-            toGf( &_info )
+        fgGLContextInfoSetAccumBlueBits(
+            toFg( &_info )
             , _accumBlueBits
         );
     }
@@ -484,8 +484,8 @@ namespace gf {
         GLContextInfo & _info
     )
     {
-        gfGLContextInfoClearAccumBlueBits(
-            toGf( &_info )
+        fgGLContextInfoClearAccumBlueBits(
+            toFg( &_info )
         );
     }
 
@@ -493,8 +493,8 @@ namespace gf {
         const GLContextInfo &   _INFO
     )
     {
-        return gfGLContextInfoExistsAccumAlphaBits(
-            toGf( &_INFO )
+        return fgGLContextInfoExistsAccumAlphaBits(
+            toFg( &_INFO )
         );
     }
 
@@ -502,8 +502,8 @@ namespace gf {
         const GLContextInfo &   _INFO
     )
     {
-        return gfGLContextInfoGetAccumAlphaBits(
-            toGf( &_INFO )
+        return fgGLContextInfoGetAccumAlphaBits(
+            toFg( &_INFO )
         );
     }
 
@@ -512,8 +512,8 @@ namespace gf {
         , Int           _accumAlphaBits
     )
     {
-        gfGLContextInfoSetAccumAlphaBits(
-            toGf( &_info )
+        fgGLContextInfoSetAccumAlphaBits(
+            toFg( &_info )
             , _accumAlphaBits
         );
     }
@@ -522,10 +522,10 @@ namespace gf {
         GLContextInfo & _info
     )
     {
-        gfGLContextInfoClearAccumAlphaBits(
-            toGf( &_info )
+        fgGLContextInfoClearAccumAlphaBits(
+            toFg( &_info )
         );
     }
 }
 
-#endif  // GF4CPP_GL_CONTEXTINFO_H
+#endif  // FG4CPP_GL_CONTEXTINFO_H

@@ -1,72 +1,72 @@
-﻿#ifndef GF4CPP_WINDOW_WINDOW_H
-#define GF4CPP_WINDOW_WINDOW_H
+﻿#ifndef FG4CPP_WINDOW_WINDOW_H
+#define FG4CPP_WINDOW_WINDOW_H
 
-#include "gfpp/window/window.h"
-#include "gf/window/window.h"
+#include "fgpp/window/window.h"
+#include "fg/window/window.h"
 
-namespace gf {
-    inline const GfWindow & toGf(
+namespace fg {
+    inline const FgWindow & toFg(
         const Window &  _WINDOW
     )
     {
-        return reinterpret_cast< const GfWindow & >( _WINDOW );
+        return reinterpret_cast< const FgWindow & >( _WINDOW );
     }
 
-    inline GfWindow & toGf(
+    inline FgWindow & toFg(
         Window &    _window
     )
     {
-        return reinterpret_cast< GfWindow & >( _window );
+        return reinterpret_cast< FgWindow & >( _window );
     }
 
-    inline const GfWindow * toGf(
+    inline const FgWindow * toFg(
         const Window *  _WINDOW
     )
     {
-        return reinterpret_cast< const GfWindow * >( _WINDOW );
+        return reinterpret_cast< const FgWindow * >( _WINDOW );
     }
 
-    inline GfWindow * toGf(
+    inline FgWindow * toFg(
         Window *    _window
     )
     {
-        return reinterpret_cast< GfWindow * >( _window );
+        return reinterpret_cast< FgWindow * >( _window );
     }
 
-    inline const Window & toGfpp(
-        const GfWindow &    _WINDOW
+    inline const Window & toFgpp(
+        const FgWindow &    _WINDOW
     )
     {
         return reinterpret_cast< const Window & >( _WINDOW );
     }
 
-    inline Window & toGfpp(
-        GfWindow &  _window
+    inline Window & toFgpp(
+        FgWindow &  _window
     )
     {
         return reinterpret_cast< Window & >( _window );
     }
 
-    inline const Window * toGfpp(
-        const GfWindow *    _WINDOW
+    inline const Window * toFgpp(
+        const FgWindow *    _WINDOW
     )
     {
         return reinterpret_cast< const Window * >( _WINDOW );
     }
 
-    inline Window * toGfpp(
-        GfWindow *  _window
+    inline Window * toFgpp(
+        FgWindow *  _window
     )
     {
         return reinterpret_cast< Window * >( _window );
     }
 }
 
-#include "gf4cpp/window/eventhandlers.h"
-#include "gf4cpp/string/utf32.h"
-#include "gfpp/common/primitives.h"
+#include "fg4cpp/window/eventhandlers.h"
+#include "fg4cpp/string/utf32.h"
+#include "fgpp/common/primitives.h"
 
-namespace gf {
+namespace fg {
     inline Window * newWindow(
         const WindowEventHandlers & _EVENT_HANDLERS
         , const Utf32 &             _TITLE
@@ -74,10 +74,10 @@ namespace gf {
         , Int                       _height
     )
     {
-        return toGfpp(
-            gfWindowNew(
-                toGf( &_EVENT_HANDLERS )
-                , toGf( &_TITLE )
+        return toFgpp(
+            fgWindowNew(
+                toFg( &_EVENT_HANDLERS )
+                , toFg( &_TITLE )
                 , _width
                 , _height
             )
@@ -88,8 +88,8 @@ namespace gf {
         Window &    _window
     )
     {
-        gfWindowFree(
-            toGf( &_window )
+        fgWindowFree(
+            toFg( &_window )
         );
     }
 
@@ -97,8 +97,8 @@ namespace gf {
         Window &    _window
     )
     {
-        gfWindowClose(
-            toGf( &_window )
+        fgWindowClose(
+            toFg( &_window )
         );
     }
 
@@ -107,9 +107,9 @@ namespace gf {
         , const Utf32 & _TITLE
     )
     {
-        return gfWindowSetTitle(
-            toGf( &_window )
-            , toGf( &_TITLE )
+        return fgWindowSetTitle(
+            toFg( &_window )
+            , toFg( &_TITLE )
         );
     }
 
@@ -119,8 +119,8 @@ namespace gf {
         , Int       _y
     )
     {
-        gfWindowSetPosition(
-            toGf( &_window )
+        fgWindowSetPosition(
+            toFg( &_window )
             , _x
             , _y
         );
@@ -132,8 +132,8 @@ namespace gf {
         , Int       _height
     )
     {
-        gfWindowSetSize(
-            toGf( &_window )
+        fgWindowSetSize(
+            toFg( &_window )
             , _width
             , _height
         );
@@ -147,8 +147,8 @@ namespace gf {
         , Int       _height
     )
     {
-        gfWindowRepaint(
-            toGf( &_window )
+        fgWindowRepaint(
+            toFg( &_window )
             , _x
             , _y
             , _width
@@ -160,10 +160,10 @@ namespace gf {
         Window &    _window
     )
     {
-        gfWindowRepaintAll(
-            toGf( &_window )
+        fgWindowRepaintAll(
+            toFg( &_window )
         );
     }
 }
 
-#endif  // GF4CPP_WINDOW_WINDOW_H
+#endif  // FG4CPP_WINDOW_WINDOW_H

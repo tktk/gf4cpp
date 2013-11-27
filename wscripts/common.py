@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-GF4CPP = 'gf4cpp'
+FG4CPP = 'fg4cpp'
 
 BUILD_DIR = 'build'
 SOURCE_DIR = 'src'
