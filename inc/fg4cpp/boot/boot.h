@@ -4,15 +4,20 @@
 #include "fg/boot/boot.h"
 
 #include "fg4cpp/boot/gameconfig.h"
+#include "fg4cpp/string/utf32.h"
 #include "fgpp/common/primitives.h"
 
 namespace fg {
     inline Int boot(
-        const GameConfig &  _GAME_CONFIG
+        const Utf32 &           _MAIN_FILE_NAME
+        , const Utf32 &         _MAIN_NAME
+        , const GameConfig &    _GAME_CONFIG
     )
     {
         return fgBoot(
-            toFg( &_GAME_CONFIG )
+            toFg( &_MAIN_FILE_NAME )
+            , toFg( &_MAIN_NAME )
+            , toFg( &_GAME_CONFIG )
         );
     }
 }
