@@ -102,50 +102,6 @@ namespace fg {
             , toFg( &_BIN_DIR )
         );
     }
-
-    inline const Utf32 * getMainFile(
-        const GameConfig &  _GAME_CONFIG
-    )
-    {
-        return toFgpp(
-            fgGameConfigGetMainFile(
-                toFg( &_GAME_CONFIG )
-            )
-        );
-    }
-
-    inline Bool setMainFile(
-        GameConfig &    _gameConfig
-        , const Utf32 & _MAIN_FILE
-    )
-    {
-        return fgGameConfigSetMainFile(
-            toFg( &_gameConfig )
-            , toFg( &_MAIN_FILE )
-        );
-    }
-
-    inline const Utf32 * getMain(
-        const GameConfig &  _GAME_CONFIG
-    )
-    {
-        return toFgpp(
-            fgGameConfigGetMain(
-                toFg( &_GAME_CONFIG )
-            )
-        );
-    }
-
-    inline Bool setMain(
-        GameConfig &    _gameConfig
-        , const Utf32 & _MAIN
-    )
-    {
-        return fgGameConfigSetMain(
-            toFg( &_gameConfig )
-            , toFg( &_MAIN )
-        );
-    }
 }
 
 #endif  // FG4CPP_BOOT_GAMECONFIG_H
