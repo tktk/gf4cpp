@@ -40,14 +40,16 @@ namespace gf {
     inline fg::GLConfig * newGLConfig(
     )
     {
-        return gf::toGfpp( gfGLConfigNew() );
+        return toGfpp( gfGLConfigNew() );
     }
 
     inline void free(
         fg::GLConfig &  _config
     )
     {
-        gfGLConfigFree( gf::toGf( &_config ) );
+        gfGLConfigFree(
+            toGf( &_config )
+        );
     }
 
     inline void setDoubleBuffer(
@@ -56,7 +58,7 @@ namespace gf {
     )
     {
         gfGLConfigSetDoubleBuffer(
-            gf::toGf( &_config )
+            toGf( &_config )
             , _doubleBuffer
         );
     }
@@ -67,7 +69,7 @@ namespace gf {
     )
     {
         gfGLConfigSetAuxBuffers(
-            gf::toGf( &_config )
+            toGf( &_config )
             , _auxBuffers
         );
     }
@@ -77,7 +79,7 @@ namespace gf {
     )
     {
         gfGLConfigClearAuxBuffers(
-            gf::toGf( &_config )
+            toGf( &_config )
         );
     }
 
@@ -87,7 +89,7 @@ namespace gf {
     )
     {
         gfGLConfigSetRedBits(
-            gf::toGf( &_config )
+            toGf( &_config )
             , _redBits
         );
     }
@@ -97,7 +99,7 @@ namespace gf {
     )
     {
         gfGLConfigClearRedBits(
-            gf::toGf( &_config )
+            toGf( &_config )
         );
     }
 
@@ -107,7 +109,7 @@ namespace gf {
     )
     {
         gfGLConfigSetGreenBits(
-            gf::toGf( &_config )
+            toGf( &_config )
             , _greenBits
         );
     }
@@ -117,7 +119,7 @@ namespace gf {
     )
     {
         gfGLConfigClearGreenBits(
-            gf::toGf( &_config )
+            toGf( &_config )
         );
     }
 
@@ -127,7 +129,7 @@ namespace gf {
     )
     {
         gfGLConfigSetBlueBits(
-            gf::toGf( &_config )
+            toGf( &_config )
             , _blueBits
         );
     }
@@ -137,7 +139,7 @@ namespace gf {
     )
     {
         gfGLConfigClearBlueBits(
-            gf::toGf( &_config )
+            toGf( &_config )
         );
     }
 
@@ -147,7 +149,7 @@ namespace gf {
     )
     {
         gfGLConfigSetAlphaBits(
-            gf::toGf( &_config )
+            toGf( &_config )
             , _alphaBits
         );
     }
@@ -157,7 +159,7 @@ namespace gf {
     )
     {
         gfGLConfigClearAlphaBits(
-            gf::toGf( &_config )
+            toGf( &_config )
         );
     }
 
@@ -167,7 +169,7 @@ namespace gf {
     )
     {
         gfGLConfigSetDepthBits(
-            gf::toGf( &_config )
+            toGf( &_config )
             , _depthBits
         );
     }
@@ -177,7 +179,7 @@ namespace gf {
     )
     {
         gfGLConfigClearDepthBits(
-            gf::toGf( &_config )
+            toGf( &_config )
         );
     }
 
@@ -187,7 +189,7 @@ namespace gf {
     )
     {
         gfGLConfigSetStencilBits(
-            gf::toGf( &_config )
+            toGf( &_config )
             , _stencilBits
         );
     }
@@ -197,7 +199,7 @@ namespace gf {
     )
     {
         gfGLConfigClearStencilBits(
-            gf::toGf( &_config )
+            toGf( &_config )
         );
     }
 
@@ -207,7 +209,7 @@ namespace gf {
     )
     {
         gfGLConfigSetAccumRedBits(
-            gf::toGf( &_config )
+            toGf( &_config )
             , _accumRedBits
         );
     }
@@ -217,7 +219,7 @@ namespace gf {
     )
     {
         gfGLConfigClearAccumRedBits(
-            gf::toGf( &_config )
+            toGf( &_config )
         );
     }
 
@@ -227,7 +229,7 @@ namespace gf {
     )
     {
         gfGLConfigSetAccumGreenBits(
-            gf::toGf( &_config )
+            toGf( &_config )
             , _accumGreenBits
         );
     }
@@ -237,7 +239,7 @@ namespace gf {
     )
     {
         gfGLConfigClearAccumGreenBits(
-            gf::toGf( &_config )
+            toGf( &_config )
         );
     }
 
@@ -247,7 +249,7 @@ namespace gf {
     )
     {
         gfGLConfigSetAccumBlueBits(
-            gf::toGf( &_config )
+            toGf( &_config )
             , _accumBlueBits
         );
     }
@@ -257,7 +259,7 @@ namespace gf {
     )
     {
         gfGLConfigClearAccumBlueBits(
-            gf::toGf( &_config )
+            toGf( &_config )
         );
     }
 
@@ -267,7 +269,7 @@ namespace gf {
     )
     {
         gfGLConfigSetAccumAlphaBits(
-            gf::toGf( &_config )
+            toGf( &_config )
             , _accumAlphaBits
         );
     }
@@ -277,7 +279,7 @@ namespace gf {
     )
     {
         gfGLConfigClearAccumAlphaBits(
-            gf::toGf( &_config )
+            toGf( &_config )
         );
     }
 }

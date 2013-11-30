@@ -62,18 +62,18 @@ namespace fg {
     }
 }
 
-#include "fg4cpp/gl/contextinfo.h"
+#include "fg4cpp/gl/config.h"
 #include "fg4cpp/window/window.h"
 #include "fgpp/common/primitives.h"
 
 namespace fg {
     inline GLContext * newGLContext(
-        const GLContextInfo &   _INFO
+        const GLConfig &    _CONFIG
     )
     {
         return toFgpp(
             fgGLContextNew(
-                toFg( &_INFO )
+                toFg( &_CONFIG )
             )
         );
     }
