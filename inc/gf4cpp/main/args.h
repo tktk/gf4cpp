@@ -34,16 +34,16 @@ namespace gf {
     }
 }
 
-#include "fg4cpp/boot/config.h"
+#include "gf4cpp/boot/config.h"
 
 namespace gf {
     inline fg::Args * newArgs(
-        const fg::BootConfig &  _CONFIG
+        const BootConfig &  _CONFIG
     )
     {
         return toGfpp(
             gfArgsNew(
-                fg::toFg( &_CONFIG )
+                toGf( &_CONFIG )
             )
         );
     }
