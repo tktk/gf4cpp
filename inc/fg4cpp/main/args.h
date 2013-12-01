@@ -6,31 +6,31 @@
 
 namespace fg {
     inline const FgArgs & toFg(
-        const Args &    _GAME_CONFIG
+        const Args &    _ARGS
     )
     {
-        return reinterpret_cast< const FgArgs & >( _GAME_CONFIG );
+        return reinterpret_cast< const FgArgs & >( _ARGS );
     }
 
     inline const FgArgs * toFg(
-        const Args *    _GAME_CONFIG
+        const Args *    _ARGS
     )
     {
-        return reinterpret_cast< const FgArgs * >( _GAME_CONFIG );
+        return reinterpret_cast< const FgArgs * >( _ARGS );
     }
 
     inline const Args & toFgpp(
-        const FgArgs &  _GAME_CONFIG
+        const FgArgs &  _ARGS
     )
     {
-        return reinterpret_cast< const Args & >( _GAME_CONFIG );
+        return reinterpret_cast< const Args & >( _ARGS );
     }
 
     inline const Args * toFgpp(
-        const FgArgs *  _GAME_CONFIG
+        const FgArgs *  _ARGS
     )
     {
-        return reinterpret_cast< const Args * >( _GAME_CONFIG );
+        return reinterpret_cast< const Args * >( _ARGS );
     }
 }
 
