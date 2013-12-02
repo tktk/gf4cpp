@@ -1,8 +1,8 @@
-﻿#ifndef GF4CPP_BOOT_LIBRARY_H
-#define GF4CPP_BOOT_LIBRARY_H
+﻿#ifndef GF4CPP_MAIN_LIBRARY_H
+#define GF4CPP_MAIN_LIBRARY_H
 
-#include "gfpp/boot/library.h"
-#include "gf/boot/library.h"
+#include "gfpp/main/library.h"
+#include "gf/main/library.h"
 
 namespace gf {
     inline const GfLibrary & toGf(
@@ -99,4 +99,4 @@ namespace gf {
     }
 }
 
-#endif  // GF4CPP_BOOT_LIBRARY_H
+#endif  // GF4CPP_MAIN_LIBRARY_H

@@ -1,8 +1,8 @@
-﻿#ifndef GF4CPP_BOOT_CONFIG_H
-#define GF4CPP_BOOT_CONFIG_H
+﻿#ifndef GF4CPP_MAIN_BOOTCONFIG_H
+#define GF4CPP_MAIN_BOOTCONFIG_H
 
-#include "gfpp/boot/config.h"
-#include "gf/boot/config.h"
+#include "gfpp/main/bootconfig.h"
+#include "gf/main/bootconfig.h"
 
 namespace gf {
     inline const GfBootConfig & toGf(
@@ -578,4 +578,4 @@ namespace gf {
     }
 }
 
-#endif  // GF4CPP_BOOT_CONFIG_H
+#endif  // GF4CPP_MAIN_BOOTCONFIG_H

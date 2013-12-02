@@ -1,9 +1,9 @@
-﻿#ifndef GF4CPP_BOOT_BOOT_H
-#define GF4CPP_BOOT_BOOT_H
+﻿#ifndef GF4CPP_MAIN_BOOT_H
+#define GF4CPP_MAIN_BOOT_H
 
-#include "gf/boot/boot.h"
+#include "gf/main/boot.h"
 
-#include "gf4cpp/boot/config.h"
+#include "gf4cpp/main/bootconfig.h"
 #include "fg4cpp/string/utf32.h"
 #include "fgpp/common/primitives.h"
 
@@ -22,4 +22,4 @@ namespace gf {
     }
 }
 
-#endif  // GF4CPP_BOOT_BOOT_H
+#endif  // GF4CPP_MAIN_BOOT_H

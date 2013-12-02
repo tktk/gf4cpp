@@ -34,7 +34,7 @@ namespace gf {
     }
 }
 
-#include "gf4cpp/boot/config.h"
+#include "gf4cpp/main/bootconfig.h"
 
 namespace gf {
     inline fg::Args * newArgs(
