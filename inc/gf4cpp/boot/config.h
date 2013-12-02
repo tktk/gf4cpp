@@ -81,12 +81,21 @@ namespace gf {
         );
     }
 
-    inline const fg::Utf32 * getBinDir(
+    inline fg::Bool existsBinDir(
+        const BootConfig &  _CONFIG
+    )
+    {
+        return gfBootConfigExistsBinDir(
+            toGf( &_CONFIG )
+        );
+    }
+
+    inline const fg::Utf32 & getBinDir(
         const BootConfig &  _CONFIG
     )
     {
         return fg::toFgpp(
-            gfBootConfigGetBinDir(
+            *gfBootConfigGetBinDir(
                 toGf( &_CONFIG )
             )
         );
@@ -100,6 +109,15 @@ namespace gf {
         return gfBootConfigSetBinDir(
             toGf( &_config )
             , fg::toFg( &_BIN_DIR )
+        );
+    }
+
+    inline void clearBinDir(
+        BootConfig &    _config
+    )
+    {
+        gfBootConfigClearBinDir(
+            toGf( &_config )
         );
     }
 }
