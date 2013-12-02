@@ -391,6 +391,113 @@ namespace fg {
             , toFg( &_UTF16 )
         );
     }
+
+    inline Bool toInt(
+        Int &           _int
+        , const Utf16 & _UTF16
+        , Int           _base
+    )
+    {
+        return fgUtf16ToIntWithBase(
+            &_int
+            , toFg( &_UTF16 )
+            , _base
+        );
+    }
+
+    inline Bool toUInt(
+        UInt &          _uint
+        , const Utf16 & _UTF16
+    )
+    {
+        return fgUtf16ToUInt(
+            &_uint
+            , toFg( &_UTF16 )
+        );
+    }
+
+    inline Bool toUInt(
+        UInt &          _uint
+        , const Utf16 & _UTF16
+        , Int           _base
+    )
+    {
+        return fgUtf16ToUIntWithBase(
+            &_uint
+            , toFg( &_UTF16 )
+            , _base
+        );
+    }
+
+    inline Bool toLong(
+        Long &          _long
+        , const Utf16 & _UTF16
+    )
+    {
+        return fgUtf16ToLong(
+            &_long
+            , toFg( &_UTF16 )
+        );
+    }
+
+    inline Bool toLong(
+        Long &          _long
+        , const Utf16 & _UTF16
+        , Int           _base
+    )
+    {
+        return fgUtf16ToLongWithBase(
+            &_long
+            , toFg( &_UTF16 )
+            , _base
+        );
+    }
+
+    inline Bool toULong(
+        ULong &         _ulong
+        , const Utf16 & _UTF16
+    )
+    {
+        return fgUtf16ToULong(
+            &_ulong
+            , toFg( &_UTF16 )
+        );
+    }
+
+    inline Bool toULong(
+        ULong &         _ulong
+        , const Utf16 & _UTF16
+        , Int           _base
+    )
+    {
+        return fgUtf16ToULongWithBase(
+            &_ulong
+            , toFg( &_UTF16 )
+            , _base
+        );
+    }
+
+    inline Bool toFloat(
+        Float &         _float
+        , const Utf16 & _UTF16
+    )
+    {
+        return fgUtf16ToFloat(
+            &_float
+            , toFg( &_UTF16 )
+        );
+    }
+
+    inline Bool toDouble(
+        Double &        _double
+        , const Utf16 & _UTF16
+    )
+    {
+        return fgUtf16ToDouble(
+            &_double
+            , toFg( &_UTF16 )
+        );
+    }
 }
 
 #endif  // FG4CPP_STRING_UTF16_H

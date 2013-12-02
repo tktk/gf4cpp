@@ -391,6 +391,113 @@ namespace fg {
             , toFg( &_UTF8 )
         );
     }
+
+    inline Bool toInt(
+        Int &           _int
+        , const Utf8 &  _UTF8
+        , Int           _base
+    )
+    {
+        return fgUtf8ToIntWithBase(
+            &_int
+            , toFg( &_UTF8 )
+            , _base
+        );
+    }
+
+    inline Bool toUInt(
+        UInt &          _uint
+        , const Utf8 &  _UTF8
+    )
+    {
+        return fgUtf8ToUInt(
+            &_uint
+            , toFg( &_UTF8 )
+        );
+    }
+
+    inline Bool toUInt(
+        UInt &          _uint
+        , const Utf8 &  _UTF8
+        , Int           _base
+    )
+    {
+        return fgUtf8ToUIntWithBase(
+            &_uint
+            , toFg( &_UTF8 )
+            , _base
+        );
+    }
+
+    inline Bool toLong(
+        Long &          _long
+        , const Utf8 &  _UTF8
+    )
+    {
+        return fgUtf8ToLong(
+            &_long
+            , toFg( &_UTF8 )
+        );
+    }
+
+    inline Bool toLong(
+        Long &          _long
+        , const Utf8 &  _UTF8
+        , Int           _base
+    )
+    {
+        return fgUtf8ToLongWithBase(
+            &_long
+            , toFg( &_UTF8 )
+            , _base
+        );
+    }
+
+    inline Bool toULong(
+        ULong &         _ulong
+        , const Utf8 &  _UTF8
+    )
+    {
+        return fgUtf8ToULong(
+            &_ulong
+            , toFg( &_UTF8 )
+        );
+    }
+
+    inline Bool toULong(
+        ULong &         _ulong
+        , const Utf8 &  _UTF8
+        , Int           _base
+    )
+    {
+        return fgUtf8ToULongWithBase(
+            &_ulong
+            , toFg( &_UTF8 )
+            , _base
+        );
+    }
+
+    inline Bool toFloat(
+        Float &         _float
+        , const Utf8 &  _UTF8
+    )
+    {
+        return fgUtf8ToFloat(
+            &_float
+            , toFg( &_UTF8 )
+        );
+    }
+
+    inline Bool toDouble(
+        Double &        _double
+        , const Utf8 &  _UTF8
+    )
+    {
+        return fgUtf8ToDouble(
+            &_double
+            , toFg( &_UTF8 )
+        );
+    }
 }
 
 #endif  // FG4CPP_STRING_UTF8_H

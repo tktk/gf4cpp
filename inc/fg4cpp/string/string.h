@@ -391,6 +391,113 @@ namespace fg {
             , toFg( &_STRING )
         );
     }
+
+    inline Bool toInt(
+        Int &               _int
+        , const String &    _STRING
+        , Int               _base
+    )
+    {
+        return fgStringToIntWithBase(
+            &_int
+            , toFg( &_STRING )
+            , _base
+        );
+    }
+
+    inline Bool toUInt(
+        UInt &              _uint
+        , const String &    _STRING
+    )
+    {
+        return fgStringToUInt(
+            &_uint
+            , toFg( &_STRING )
+        );
+    }
+
+    inline Bool toUInt(
+        UInt &              _uint
+        , const String &    _STRING
+        , Int               _base
+    )
+    {
+        return fgStringToUIntWithBase(
+            &_uint
+            , toFg( &_STRING )
+            , _base
+        );
+    }
+
+    inline Bool toLong(
+        Long &              _long
+        , const String &    _STRING
+    )
+    {
+        return fgStringToLong(
+            &_long
+            , toFg( &_STRING )
+        );
+    }
+
+    inline Bool toLong(
+        Long &              _long
+        , const String &    _STRING
+        , Int               _base
+    )
+    {
+        return fgStringToLongWithBase(
+            &_long
+            , toFg( &_STRING )
+            , _base
+        );
+    }
+
+    inline Bool toULong(
+        ULong &             _ulong
+        , const String &    _STRING
+    )
+    {
+        return fgStringToULong(
+            &_ulong
+            , toFg( &_STRING )
+        );
+    }
+
+    inline Bool toULong(
+        ULong &             _ulong
+        , const String &    _STRING
+        , Int               _base
+    )
+    {
+        return fgStringToULongWithBase(
+            &_ulong
+            , toFg( &_STRING )
+            , _base
+        );
+    }
+
+    inline Bool toFloat(
+        Float &             _float
+        , const String &    _STRING
+    )
+    {
+        return fgStringToFloat(
+            &_float
+            , toFg( &_STRING )
+        );
+    }
+
+    inline Bool toDouble(
+        Double &            _double
+        , const String &    _STRING
+    )
+    {
+        return fgStringToDouble(
+            &_double
+            , toFg( &_STRING )
+        );
+    }
 }
 
 #endif  // FG4CPP_STRING_STRING_H

@@ -391,6 +391,113 @@ namespace fg {
             , toFg( &_UTF32 )
         );
     }
+
+    inline Bool toInt(
+        Int &           _int
+        , const Utf32 & _UTF32
+        , Int           _base
+    )
+    {
+        return fgUtf32ToIntWithBase(
+            &_int
+            , toFg( &_UTF32 )
+            , _base
+        );
+    }
+
+    inline Bool toUInt(
+        UInt &          _uint
+        , const Utf32 & _UTF32
+    )
+    {
+        return fgUtf32ToUInt(
+            &_uint
+            , toFg( &_UTF32 )
+        );
+    }
+
+    inline Bool toUInt(
+        UInt &          _uint
+        , const Utf32 & _UTF32
+        , Int           _base
+    )
+    {
+        return fgUtf32ToUIntWithBase(
+            &_uint
+            , toFg( &_UTF32 )
+            , _base
+        );
+    }
+
+    inline Bool toLong(
+        Long &          _long
+        , const Utf32 & _UTF32
+    )
+    {
+        return fgUtf32ToLong(
+            &_long
+            , toFg( &_UTF32 )
+        );
+    }
+
+    inline Bool toLong(
+        Long &          _long
+        , const Utf32 & _UTF32
+        , Int           _base
+    )
+    {
+        return fgUtf32ToLongWithBase(
+            &_long
+            , toFg( &_UTF32 )
+            , _base
+        );
+    }
+
+    inline Bool toULong(
+        ULong &         _ulong
+        , const Utf32 & _UTF32
+    )
+    {
+        return fgUtf32ToULong(
+            &_ulong
+            , toFg( &_UTF32 )
+        );
+    }
+
+    inline Bool toULong(
+        ULong &         _ulong
+        , const Utf32 & _UTF32
+        , Int           _base
+    )
+    {
+        return fgUtf32ToULongWithBase(
+            &_ulong
+            , toFg( &_UTF32 )
+            , _base
+        );
+    }
+
+    inline Bool toFloat(
+        Float &         _float
+        , const Utf32 & _UTF32
+    )
+    {
+        return fgUtf32ToFloat(
+            &_float
+            , toFg( &_UTF32 )
+        );
+    }
+
+    inline Bool toDouble(
+        Double &        _double
+        , const Utf32 & _UTF32
+    )
+    {
+        return fgUtf32ToDouble(
+            &_double
+            , toFg( &_UTF32 )
+        );
+    }
 }
 
 #endif  // FG4CPP_STRING_UTF32_H
