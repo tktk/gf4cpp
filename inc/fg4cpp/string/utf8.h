@@ -380,6 +380,17 @@ namespace fg {
             , _length
         );
     }
+
+    inline Bool toInt(
+        Int &           _int
+        , const Utf8 &  _UTF8
+    )
+    {
+        return fgUtf8ToInt(
+            &_int
+            , toFg( &_UTF8 )
+        );
+    }
 }
 
 #endif  // FG4CPP_STRING_UTF8_H

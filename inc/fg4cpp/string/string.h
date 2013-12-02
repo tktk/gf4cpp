@@ -380,6 +380,17 @@ namespace fg {
             , _length
         );
     }
+
+    inline Bool toInt(
+        Int &               _int
+        , const String &    _STRING
+    )
+    {
+        return fgStringToInt(
+            &_int
+            , toFg( &_STRING )
+        );
+    }
 }
 
 #endif  // FG4CPP_STRING_STRING_H

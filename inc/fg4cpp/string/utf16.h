@@ -380,6 +380,17 @@ namespace fg {
             , _length
         );
     }
+
+    inline Bool toInt(
+        Int &           _int
+        , const Utf16 & _UTF16
+    )
+    {
+        return fgUtf16ToInt(
+            &_int
+            , toFg( &_UTF16 )
+        );
+    }
 }
 
 #endif  // FG4CPP_STRING_UTF16_H
