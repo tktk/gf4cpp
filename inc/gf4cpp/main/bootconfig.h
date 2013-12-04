@@ -62,6 +62,7 @@ namespace gf {
     }
 }
 
+#include "fg4cpp/gl/version.h"
 #include "fg4cpp/string/utf32.h"
 #include "fgpp/common/primitives.h"
 
@@ -117,6 +118,46 @@ namespace gf {
     )
     {
         gfBootConfigClearBinDir(
+            toGf( &_config )
+        );
+    }
+
+    inline fg::Bool existsGLVersion(
+        const BootConfig &  _CONFIG
+    )
+    {
+        return gfBootConfigExistsGLVersion(
+            toGf( &_CONFIG )
+        );
+    }
+
+    inline fg::GLVersion getGLVersion(
+        const BootConfig &  _CONFIG
+    )
+    {
+        return fg::toFgpp(
+            gfBootConfigGetGLVersion(
+                toGf( &_CONFIG )
+            )
+        );
+    }
+
+    inline void setGLVersion(
+        BootConfig &    _config
+        , fg::GLVersion _version
+    )
+    {
+        gfBootConfigSetGLVersion(
+            toGf( &_config )
+            , fg::toFg( _version )
+        );
+    }
+
+    inline void clearGLVersion(
+        BootConfig &    _config
+    )
+    {
+        gfBootConfigClearGLVersion(
             toGf( &_config )
         );
     }
