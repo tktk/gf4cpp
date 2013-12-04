@@ -34,6 +34,7 @@ namespace gf {
     }
 }
 
+#include "fg4cpp/gl/version.h"
 #include "fgpp/common/primitives.h"
 
 namespace gf {
@@ -49,6 +50,17 @@ namespace gf {
     {
         gfGLConfigFree(
             toGf( &_config )
+        );
+    }
+
+    inline void setVersion(
+        fg::GLConfig &  _config
+        , fg::GLVersion _version
+    )
+    {
+        gfGLConfigSetVersion(
+            toGf( &_config )
+            , fg::toFg( _version )
         );
     }
 
