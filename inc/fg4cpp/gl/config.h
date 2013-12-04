@@ -34,9 +34,21 @@ namespace fg {
     }
 }
 
+#include "fg4cpp/gl/version.h"
 #include "fgpp/common/primitives.h"
 
 namespace fg {
+    inline GLVersion getVersion(
+        const GLConfig &    _CONFIG
+    )
+    {
+        return toFgpp(
+            fgGLConfigGetVersion(
+                toFg( &_CONFIG )
+            )
+        );
+    }
+
     inline Bool getDoubleBuffer(
         const GLConfig &    _CONFIG
     )
