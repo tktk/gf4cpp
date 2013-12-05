@@ -176,7 +176,7 @@ def _configureIncludes( _context ):
         includes,
     )
 
-    _context.env.INCLUDES = includes
+    _context.env.MY_INCLUDES = includes
 
 def _configureDefines( _context ):
     defines = []
@@ -194,7 +194,7 @@ def _configureDefines( _context ):
     )
 
     if len( defines ) > 0:
-        _context.env.DEFINES = defines
+        _context.env.MY_DEFINES = defines
 
 def _configureCxx( _context ):
     cxx = None
@@ -233,7 +233,7 @@ def _configureCxxflags(
     )
 
     if flags is not None:
-        _context.env.CXXFLAGS = flags
+        _context.env.MY_CXXFLAGS = flags
 
 def _configureLinkflags(
     _context,
@@ -248,7 +248,7 @@ def _configureLinkflags(
     )
 
     if flags is not None:
-        _context.env.LINKFLAGS = flags
+        _context.env.MY_LINKFLAGS = flags
 
 def _configureFlags(
     _context,
