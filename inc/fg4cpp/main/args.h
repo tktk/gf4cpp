@@ -37,12 +37,12 @@ namespace fg {
 #include "fg4cpp/gl/config.h"
 
 namespace fg {
-    inline const GLConfig & getGLConfig(
+    inline const GLConfig * getGLConfig(
         const Args &    _ARGS
     )
     {
         return toFgpp(
-            *fgArgsGetGLConfig(
+            fgArgsGetGLConfig(
                 toFg( &_ARGS )
             )
         );
