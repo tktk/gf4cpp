@@ -16,4 +16,8 @@ namespace fg {
     }
 }
 
+#include "fg4cpp/gl/types.h"
+#include "fg4cpp/gl/constants.h"
+#include "fg4cpp/gl/functions.h"
+
 #endif  // FG4CPP_GL_GL_H
