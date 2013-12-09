@@ -100,19 +100,17 @@ namespace fg {
 }
 
 #define GL_ARGS( ... ) \
-    __VA_ARGS__
+    GLCurrentContext & _context __VA_ARGS__
 #define GL_VALUES( ... ) \
-    ( toFg( &_context ) __VA_ARGS__ )
+    toFg( &_context ) __VA_ARGS__
 #define GL_DEFINE_FUNCTION( _proc, _name, _returnType, _args ) \
-    inline _returnType FGPP_GL_FUNCTION_NAME( _name )( GLCurrentContext & _context GL_ARGS _args ) { _proc }
-#define FG4CPP_GL_ARG( _type, _value ) \
-    toFgGL< _type >( _value )
+    inline _returnType FGPP_GL_FUNCTION_NAME( _name )( GL_ARGS _args ) { _proc }
 #define FG4CPP_GL_FUNCTION_NUM( _name, _returnType, _args, _values ) \
-    GL_DEFINE_FUNCTION( return FG_GL_FUNCTION_NAME( _name ) GL_VALUES _values;, _name, _returnType, _args )
+    GL_DEFINE_FUNCTION( return FG_GL_FUNCTION_NAME( _name )( GL_VALUES _values );, _name, _returnType, _args )
 #define FG4CPP_GL_FUNCTION_PTR( _name, _returnType, _args, _values ) \
-    GL_DEFINE_FUNCTION( return toFgppGL< _returnType >( FG_GL_FUNCTION_NAME( _name ) GL_VALUES _values );, _name, _returnType, _args )
+    GL_DEFINE_FUNCTION( return reinterpret_cast< _returnType >( FG_GL_FUNCTION_NAME( _name )( GL_VALUES _values ) );, _name, _returnType, _args )
 #define FG4CPP_GL_FUNCTION_VOID( _name, _args, _values ) \
-    GL_DEFINE_FUNCTION( FG_GL_FUNCTION_NAME( _name ) GL_VALUES _values;, _name, void, _args )
+    GL_DEFINE_FUNCTION( FG_GL_FUNCTION_NAME( _name )( GL_VALUES _values );, _name, void, _args )
 namespace fg {
     FG4CPP_GL_FUNCTIONS
 }
