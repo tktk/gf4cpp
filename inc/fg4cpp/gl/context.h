@@ -63,8 +63,6 @@ namespace fg {
 }
 
 #include "fg4cpp/gl/config.h"
-#include "fg4cpp/window/window.h"
-#include "fgpp/common/primitives.h"
 
 namespace fg {
     inline GLContext * newGLContext(
@@ -83,23 +81,6 @@ namespace fg {
     )
     {
         fgGLContextFree( toFg( &_context ) );
-    }
-
-    inline Bool glMakeCurrent(
-        GLContext & _context
-        , Window &  _window
-    )
-    {
-        return fgGLContextMakeCurrent(
-            toFg( &_context )
-            , toFg( &_window )
-        );
-    }
-
-    void glMakeCurrent(
-    )
-    {
-        fgGLContextReleaseCurrent();
     }
 }
 
