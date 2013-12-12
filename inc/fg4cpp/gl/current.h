@@ -97,7 +97,6 @@ namespace fg {
             toFg( &_current )
         );
     }
-}
 
 #define GL_ARGS( ... ) \
     GLCurrent & _current __VA_ARGS__
@@ -111,14 +110,15 @@ namespace fg {
     GL_DEFINE_FUNCTION( return reinterpret_cast< _returnType >( FG_GL_FUNCTION_NAME( _name )( GL_VALUES _values ) );, _name, _returnType, _args )
 #define FG4CPP_GL_FUNCTION_VOID( _name, _args, _values ) \
     GL_DEFINE_FUNCTION( FG_GL_FUNCTION_NAME( _name )( GL_VALUES _values );, _name, void, _args )
-namespace fg {
+
     FG4CPP_GL_FUNCTIONS
-}
+
 #undef  FG4CPP_GL_FUNCTION_VOID
 #undef  FG4CPP_GL_FUNCTION_PTR
 #undef  FG4CPP_GL_FUNCTION_NUM
 #undef  GL_DEFINE_FUNCTION
 #undef  GL_VALUES
 #undef  GL_ARGS
+}
 
 #endif  // FG4CPP_GL_CURRENT_H
