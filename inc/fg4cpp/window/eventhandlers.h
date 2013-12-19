@@ -62,6 +62,7 @@ namespace fg {
     }
 }
 
+#include "fg4cpp/window/closeevent.h"
 #include "fg4cpp/window/window.h"
 #include "fg4cpp/window/key.h"
 #include "fg4cpp/util/import.h"
@@ -111,12 +112,12 @@ namespace fg {
 
     inline void callCloseEventHandler(
         const WindowEventHandlers & _EVENT_HANDLERS
-        , Window &                  _window
+        , WindowCloseEvent &        _event
     )
     {
         fgWindowEventHandlersCallCloseEventHandler(
             toFg( &_EVENT_HANDLERS )
-            , toFg( &_window )
+            , toFg( &_event )
         );
     }
 
