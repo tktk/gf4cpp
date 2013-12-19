@@ -64,6 +64,7 @@ namespace fg {
 
 #include "fg4cpp/window/closeevent.h"
 #include "fg4cpp/window/positionevent.h"
+#include "fg4cpp/window/sizeevent.h"
 #include "fg4cpp/window/window.h"
 #include "fg4cpp/window/key.h"
 #include "fg4cpp/util/import.h"
@@ -167,16 +168,12 @@ namespace fg {
 
     inline void callSizeEventHandler(
         const WindowEventHandlers & _EVENT_HANDLERS
-        , Window &                  _window
-        , Int                       _width
-        , Int                       _height
+        , const WindowSizeEvent &   _EVENT
     )
     {
         fgWindowEventHandlersCallSizeEventHandler(
             toFg( &_EVENT_HANDLERS )
-            , toFg( &_window )
-            , _width
-            , _height
+            , toFg( &_EVENT )
         );
     }
 
