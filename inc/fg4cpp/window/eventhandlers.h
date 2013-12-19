@@ -63,6 +63,7 @@ namespace fg {
 }
 
 #include "fg4cpp/window/closeevent.h"
+#include "fg4cpp/window/positionevent.h"
 #include "fg4cpp/window/window.h"
 #include "fg4cpp/window/key.h"
 #include "fg4cpp/util/import.h"
@@ -138,17 +139,13 @@ namespace fg {
     }
 
     inline void callPositionEventHandler(
-        const WindowEventHandlers & _EVENT_HANDLERS
-        , Window &                  _window
-        , Int                       _x
-        , Int                       _y
+        const WindowEventHandlers &     _EVENT_HANDLERS
+        , const WindowPositionEvent &   _EVENT
     )
     {
         fgWindowEventHandlersCallPositionEventHandler(
             toFg( &_EVENT_HANDLERS )
-            , toFg( &_window )
-            , _x
-            , _y
+            , toFg( &_EVENT )
         );
     }
 
