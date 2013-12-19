@@ -2,6 +2,7 @@
 #include "fg4cpp/window/eventhandlers.h"
 
 #include "fg/window/eventhandlers.h"
+#include "fgpp/window/closeevent.h"
 #include "fgpp/window/eventhandlers.h"
 
 namespace fg {

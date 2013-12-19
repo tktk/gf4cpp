@@ -112,12 +112,12 @@ namespace fg {
 
     inline void callCloseEventHandler(
         const WindowEventHandlers & _EVENT_HANDLERS
-        , WindowCloseEvent &        _event
+        , const WindowCloseEvent &  _EVENT
     )
     {
         fgWindowEventHandlersCallCloseEventHandler(
             toFg( &_EVENT_HANDLERS )
-            , toFg( &_event )
+            , toFg( &_EVENT )
         );
     }
 

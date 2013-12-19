@@ -97,12 +97,12 @@ namespace fg {
     }
 
     inline Window & getSource(
-        WindowCloseEvent &  _event
+        const WindowCloseEvent &    _EVENT
     )
     {
         return toFgpp(
             *fgWindowCloseEventGetSource(
-                toFg( &_event )
+                toFg( &_EVENT )
             )
         );
     }
