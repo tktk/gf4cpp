@@ -66,6 +66,7 @@ namespace fg {
 #include "fg4cpp/window/positionevent.h"
 #include "fg4cpp/window/sizeevent.h"
 #include "fg4cpp/window/paintevent.h"
+#include "fg4cpp/window/keyevent.h"
 #include "fg4cpp/window/window.h"
 #include "fg4cpp/window/key.h"
 #include "fg4cpp/util/import.h"
@@ -223,18 +224,12 @@ namespace fg {
 
     inline void callKeyEventHandler(
         const WindowEventHandlers & _EVENT_HANDLERS
-        , Window &                  _window
-        , Key                       _key
-        , const Utf32Char *         _CHAR_PTR
-        , Bool                      _pressed
+        , const WindowKeyEvent &    _EVENT
     )
     {
         fgWindowEventHandlersCallKeyEventHandler(
             toFg( &_EVENT_HANDLERS )
-            , toFg( &_window )
-            , toFg( _key )
-            , _CHAR_PTR
-            , _pressed
+            , toFg( &_EVENT )
         );
     }
 

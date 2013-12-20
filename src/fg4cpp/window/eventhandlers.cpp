@@ -6,6 +6,7 @@
 #include "fgpp/window/positionevent.h"
 #include "fgpp/window/sizeevent.h"
 #include "fgpp/window/paintevent.h"
+#include "fgpp/window/keyevent.h"
 #include "fgpp/window/eventhandlers.h"
 
 namespace fg {
