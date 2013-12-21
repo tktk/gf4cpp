@@ -68,8 +68,7 @@ namespace fg {
 #include "fg4cpp/window/paintevent.h"
 #include "fg4cpp/window/keyevent.h"
 #include "fg4cpp/window/mousebuttonevent.h"
-#include "fg4cpp/window/window.h"
-#include "fg4cpp/window/key.h"
+#include "fg4cpp/window/mousemotionevent.h"
 #include "fg4cpp/util/import.h"
 
 namespace fg {
@@ -278,17 +277,13 @@ namespace fg {
     }
 
     inline void callMouseMotionEventHandler(
-        const WindowEventHandlers & _EVENT_HANDLERS
-        , Window &                  _window
-        , Int                       _x
-        , Int                       _y
+        const WindowEventHandlers &         _EVENT_HANDLERS
+        , const WindowMouseMotionEvent &    _EVENT
     )
     {
         fgWindowEventHandlersCallMouseMotionEventHandler(
             toFg( &_EVENT_HANDLERS )
-            , toFg( &_window )
-            , _x
-            , _y
+            , toFg( &_EVENT )
         );
     }
 }

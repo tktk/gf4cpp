@@ -8,7 +8,7 @@
 #include "fgpp/window/paintevent.h"
 #include "fgpp/window/keyevent.h"
 #include "fgpp/window/mousebuttonevent.h"
-#include "fgpp/window/eventhandlers.h"
+#include "fgpp/window/mousemotionevent.h"
 
 namespace fg {
     void setCloseEventHandler(
