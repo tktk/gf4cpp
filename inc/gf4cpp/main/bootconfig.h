@@ -3,68 +3,10 @@
 
 #include "gfpp/main/bootconfig.h"
 #include "gf/main/bootconfig.h"
-
-namespace gf {
-    inline const GfBootConfig & toGf(
-        const BootConfig &  _CONFIG
-    )
-    {
-        return reinterpret_cast< const GfBootConfig & >( _CONFIG );
-    }
-
-    inline GfBootConfig & toGf(
-        BootConfig & _config
-    )
-    {
-        return reinterpret_cast< GfBootConfig & >( _config );
-    }
-
-    inline const GfBootConfig * toGf(
-        const BootConfig *  _CONFIG
-    )
-    {
-        return reinterpret_cast< const GfBootConfig * >( _CONFIG );
-    }
-
-    inline GfBootConfig * toGf(
-        BootConfig *    _config
-    )
-    {
-        return reinterpret_cast< GfBootConfig * >( _config );
-    }
-
-    inline const BootConfig & toGfpp(
-        const GfBootConfig &    _CONFIG
-    )
-    {
-        return reinterpret_cast< const BootConfig & >( _CONFIG );
-    }
-
-    inline BootConfig & toGfpp(
-        GfBootConfig &  _config
-    )
-    {
-        return reinterpret_cast< BootConfig & >( _config );
-    }
-
-    inline const BootConfig * toGfpp(
-        const GfBootConfig *    _CONFIG
-    )
-    {
-        return reinterpret_cast< const BootConfig * >( _CONFIG );
-    }
-
-    inline BootConfig * toGfpp(
-        GfBootConfig *  _config
-    )
-    {
-        return reinterpret_cast< BootConfig * >( _config );
-    }
-}
-
-#include "fg4cpp/gl/version.h"
-#include "fg4cpp/string/utf32.h"
-#include "fgpp/common/primitives.h"
+#include "gf4cpp/def/main/bootconfig.h"
+#include "fg4cpp/def/gl/version.h"
+#include "fg4cpp/def/string/utf32.h"
+#include "fgpp/def/common/primitives.h"
 
 namespace gf {
     inline BootConfig * newBootConfig(
