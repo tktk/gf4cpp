@@ -3,38 +3,8 @@
 
 #include "gfpp/main/args.h"
 #include "gf/main/args.h"
-
-namespace gf {
-    inline FgArgs & toGf(
-        fg::Args &  _args
-    )
-    {
-        return reinterpret_cast< FgArgs & >( _args );
-    }
-
-    inline FgArgs * toGf(
-        fg::Args *  _args
-    )
-    {
-        return reinterpret_cast< FgArgs * >( _args );
-    }
-
-    inline fg::Args & toGfpp(
-        FgArgs &    _args
-    )
-    {
-        return reinterpret_cast< fg::Args & >( _args );
-    }
-
-    inline fg::Args * toGfpp(
-        FgArgs *    _args
-    )
-    {
-        return reinterpret_cast< fg::Args * >( _args );
-    }
-}
-
-#include "gf4cpp/main/bootconfig.h"
+#include "gf4cpp/def/main/args.h"
+#include "gf4cpp/def/main/bootconfig.h"
 
 namespace gf {
     inline fg::Args * newArgs(
