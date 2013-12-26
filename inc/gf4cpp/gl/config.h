@@ -3,39 +3,9 @@
 
 #include "gfpp/gl/config.h"
 #include "gf/gl/config.h"
-
-namespace gf {
-    inline FgGLConfig & toGf(
-        fg::GLConfig &  _config
-    )
-    {
-        return reinterpret_cast< FgGLConfig & >( _config );
-    }
-
-    inline FgGLConfig * toGf(
-        fg::GLConfig *  _config
-    )
-    {
-        return reinterpret_cast< FgGLConfig * >( _config );
-    }
-
-    inline fg::GLConfig & toGfpp(
-        FgGLConfig &    _config
-    )
-    {
-        return reinterpret_cast< fg::GLConfig & >( _config );
-    }
-
-    inline fg::GLConfig * toGfpp(
-        FgGLConfig *    _config
-    )
-    {
-        return reinterpret_cast< fg::GLConfig * >( _config );
-    }
-}
-
-#include "fg4cpp/gl/version.h"
-#include "fgpp/common/primitives.h"
+#include "gf4cpp/def/gl/config.h"
+#include "fg4cpp/def/gl/version.h"
+#include "fgpp/def/common/primitives.h"
 
 namespace gf {
     inline fg::GLConfig * newGLConfig(
