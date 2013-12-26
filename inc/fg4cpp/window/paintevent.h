@@ -3,67 +3,9 @@
 
 #include "fgpp/window/paintevent.h"
 #include "fg/window/paintevent.h"
-
-namespace fg {
-    inline const FgWindowPaintEvent & toFg(
-        const WindowPaintEvent &    _EVENT
-    )
-    {
-        return reinterpret_cast< const FgWindowPaintEvent & >( _EVENT );
-    }
-
-    inline FgWindowPaintEvent & toFg(
-        WindowPaintEvent &  _event
-    )
-    {
-        return reinterpret_cast< FgWindowPaintEvent & >( _event );
-    }
-
-    inline const FgWindowPaintEvent * toFg(
-        const WindowPaintEvent *    _EVENT
-    )
-    {
-        return reinterpret_cast< const FgWindowPaintEvent * >( _EVENT );
-    }
-
-    inline FgWindowPaintEvent * toFg(
-        WindowPaintEvent *  _event
-    )
-    {
-        return reinterpret_cast< FgWindowPaintEvent * >( _event );
-    }
-
-    inline const WindowPaintEvent & toFgpp(
-        const FgWindowPaintEvent &  _EVENT
-    )
-    {
-        return reinterpret_cast< const WindowPaintEvent & >( _EVENT );
-    }
-
-    inline WindowPaintEvent & toFgpp(
-        FgWindowPaintEvent &    _event
-    )
-    {
-        return reinterpret_cast< WindowPaintEvent & >( _event );
-    }
-
-    inline const WindowPaintEvent * toFgpp(
-        const FgWindowPaintEvent *  _EVENT
-    )
-    {
-        return reinterpret_cast< const WindowPaintEvent * >( _EVENT );
-    }
-
-    inline WindowPaintEvent * toFgpp(
-        FgWindowPaintEvent *    _event
-    )
-    {
-        return reinterpret_cast< WindowPaintEvent * >( _event );
-    }
-}
-
-#include "fg4cpp/window/window.h"
-#include "fgpp/common/primitives.h"
+#include "fg4cpp/def/window/paintevent.h"
+#include "fg4cpp/def/window/window.h"
+#include "fgpp/def/common/primitives.h"
 
 namespace fg {
     inline WindowPaintEvent * newWindowPaintEvent(
