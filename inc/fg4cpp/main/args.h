@@ -3,38 +3,8 @@
 
 #include "fgpp/main/args.h"
 #include "fg/main/args.h"
-
-namespace fg {
-    inline const FgArgs & toFg(
-        const Args &    _ARGS
-    )
-    {
-        return reinterpret_cast< const FgArgs & >( _ARGS );
-    }
-
-    inline const FgArgs * toFg(
-        const Args *    _ARGS
-    )
-    {
-        return reinterpret_cast< const FgArgs * >( _ARGS );
-    }
-
-    inline const Args & toFgpp(
-        const FgArgs &  _ARGS
-    )
-    {
-        return reinterpret_cast< const Args & >( _ARGS );
-    }
-
-    inline const Args * toFgpp(
-        const FgArgs *  _ARGS
-    )
-    {
-        return reinterpret_cast< const Args * >( _ARGS );
-    }
-}
-
-#include "fg4cpp/gl/config.h"
+#include "fg4cpp/def/main/args.h"
+#include "fg4cpp/def/gl/config.h"
 
 namespace fg {
     inline const GLConfig * getGLConfig(
