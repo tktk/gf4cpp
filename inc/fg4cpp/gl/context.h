@@ -3,66 +3,8 @@
 
 #include "fgpp/gl/context.h"
 #include "fg/gl/context.h"
-
-namespace fg {
-    inline const FgGLContext & toFg(
-        const GLContext &   _CONTEXT
-    )
-    {
-        return reinterpret_cast< const FgGLContext & >( _CONTEXT );
-    }
-
-    inline FgGLContext & toFg(
-        GLContext & _context
-    )
-    {
-        return reinterpret_cast< FgGLContext & >( _context );
-    }
-
-    inline const FgGLContext * toFg(
-        const GLContext *   _CONTEXT
-    )
-    {
-        return reinterpret_cast< const FgGLContext * >( _CONTEXT );
-    }
-
-    inline FgGLContext * toFg(
-        GLContext * _context
-    )
-    {
-        return reinterpret_cast< FgGLContext * >( _context );
-    }
-
-    inline const GLContext & toFgpp(
-        const FgGLContext & _CONTEXT
-    )
-    {
-        return reinterpret_cast< const GLContext & >( _CONTEXT );
-    }
-
-    inline GLContext & toFgpp(
-        FgGLContext &   _context
-    )
-    {
-        return reinterpret_cast< GLContext & >( _context );
-    }
-
-    inline const GLContext * toFgpp(
-        const FgGLContext * _CONTEXT
-    )
-    {
-        return reinterpret_cast< const GLContext * >( _CONTEXT );
-    }
-
-    inline GLContext * toFgpp(
-        FgGLContext *   _context
-    )
-    {
-        return reinterpret_cast< GLContext * >( _context );
-    }
-}
-
-#include "fg4cpp/gl/config.h"
+#include "fg4cpp/def/gl/context.h"
+#include "fg4cpp/def/gl/config.h"
 
 namespace fg {
     inline GLContext * newGLContext(
