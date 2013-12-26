@@ -1,8 +1,8 @@
-﻿#ifndef FG4CPP_WINDOW_KEY_H
-#define FG4CPP_WINDOW_KEY_H
+﻿#ifndef FG4CPP_DEF_WINDOW_KEY_H
+#define FG4CPP_DEF_WINDOW_KEY_H
 
-#include "fgpp/window/key.h"
-#include "fg/window/key.h"
+#include "fgpp/def/window/key.h"
+#include "fg/def/window/key.h"
 
 namespace fg {
     inline const FgKey & toFg(
@@ -62,4 +62,4 @@ namespace fg {
     }
 }
 
-#endif  // FG4CPP_WINDOW_KEY_H
+#endif  // FG4CPP_DEF_WINDOW_KEY_H
