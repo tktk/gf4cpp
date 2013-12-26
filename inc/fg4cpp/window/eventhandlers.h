@@ -3,72 +3,13 @@
 
 #include "fgpp/window/eventhandlers.h"
 #include "fg/window/eventhandlers.h"
-
-namespace fg {
-    inline const FgWindowEventHandlers & toFg(
-        const WindowEventHandlers & _EVENT_HANDLERS
-    )
-    {
-        return reinterpret_cast< const FgWindowEventHandlers & >( _EVENT_HANDLERS );
-    }
-
-    inline FgWindowEventHandlers & toFg(
-        WindowEventHandlers &   _eventHandlers
-    )
-    {
-        return reinterpret_cast< FgWindowEventHandlers & >( _eventHandlers );
-    }
-
-    inline const FgWindowEventHandlers * toFg(
-        const WindowEventHandlers * _EVENT_HANDLERS
-    )
-    {
-        return reinterpret_cast< const FgWindowEventHandlers * >( _EVENT_HANDLERS );
-    }
-
-    inline FgWindowEventHandlers * toFg(
-        WindowEventHandlers *   _eventHandlers
-    )
-    {
-        return reinterpret_cast< FgWindowEventHandlers * >( _eventHandlers );
-    }
-
-    inline const WindowEventHandlers & toFgpp(
-        const FgWindowEventHandlers &   _EVENT_HANDLERS
-    )
-    {
-        return reinterpret_cast< const WindowEventHandlers & >( _EVENT_HANDLERS );
-    }
-
-    inline WindowEventHandlers & toFgpp(
-        FgWindowEventHandlers & _eventHandlers
-    )
-    {
-        return reinterpret_cast< WindowEventHandlers & >( _eventHandlers );
-    }
-
-    inline const WindowEventHandlers * toFgpp(
-        const FgWindowEventHandlers *   _EVENT_HANDLERS
-    )
-    {
-        return reinterpret_cast< const WindowEventHandlers * >( _EVENT_HANDLERS );
-    }
-
-    inline WindowEventHandlers * toFgpp(
-        FgWindowEventHandlers * _eventHandlers
-    )
-    {
-        return reinterpret_cast< WindowEventHandlers * >( _eventHandlers );
-    }
-}
-
-#include "fg4cpp/window/closeevent.h"
-#include "fg4cpp/window/positionevent.h"
-#include "fg4cpp/window/sizeevent.h"
-#include "fg4cpp/window/paintevent.h"
-#include "fg4cpp/window/keyevent.h"
-#include "fg4cpp/window/mousebuttonevent.h"
-#include "fg4cpp/window/mousemotionevent.h"
+#include "fg4cpp/def/window/closeevent.h"
+#include "fg4cpp/def/window/positionevent.h"
+#include "fg4cpp/def/window/sizeevent.h"
+#include "fg4cpp/def/window/paintevent.h"
+#include "fg4cpp/def/window/keyevent.h"
+#include "fg4cpp/def/window/mousebuttonevent.h"
+#include "fg4cpp/def/window/mousemotionevent.h"
 #include "fg4cpp/util/import.h"
 
 namespace fg {
@@ -98,10 +39,12 @@ namespace fg {
         );
     }
 
-    FG4CPPEXPORT void setCloseEventHandler(
-        FgWindowEventHandlers &
-        , const WindowCloseEventHandler &
-    );
+    FG4CPP_FUNCTION_VOID(
+        void setCloseEventHandler(
+            FgWindowEventHandlers &
+            , const WindowCloseEventHandler &
+        )
+    )
 
     inline void setCloseEventHandler(
         WindowEventHandlers &               _eventHandlers
@@ -125,10 +68,12 @@ namespace fg {
         );
     }
 
-    FG4CPPEXPORT void setPositionEventHandler(
-        FgWindowEventHandlers &
-        , const WindowPositionEventHandler &
-    );
+    FG4CPP_FUNCTION_VOID(
+        void setPositionEventHandler(
+            FgWindowEventHandlers &
+            , const WindowPositionEventHandler &
+        )
+    )
 
     inline void setPositionEventHandler(
         WindowEventHandlers &                   _eventHandlers
@@ -152,10 +97,12 @@ namespace fg {
         );
     }
 
-    FG4CPPEXPORT void setSizeEventHandler(
-        FgWindowEventHandlers &
-        , const WindowSizeEventHandler &
-    );
+    FG4CPP_FUNCTION_VOID(
+        void setSizeEventHandler(
+            FgWindowEventHandlers &
+            , const WindowSizeEventHandler &
+        )
+    )
 
     inline void setSizeEventHandler(
         WindowEventHandlers &               _eventHandlers
@@ -179,10 +126,12 @@ namespace fg {
         );
     }
 
-    FG4CPPEXPORT void setPaintEventHandler(
-        FgWindowEventHandlers &
-        , const WindowPaintEventHandler &
-    );
+    FG4CPP_FUNCTION_VOID(
+        void setPaintEventHandler(
+            FgWindowEventHandlers &
+            , const WindowPaintEventHandler &
+        )
+    )
 
     inline void setPaintEventHandler(
         WindowEventHandlers &               _eventHandlers
@@ -206,10 +155,12 @@ namespace fg {
         );
     }
 
-    FG4CPPEXPORT void setKeyEventHandler(
-        FgWindowEventHandlers &
-        , const WindowKeyEventHandler &
-    );
+    FG4CPP_FUNCTION_VOID(
+        void setKeyEventHandler(
+            FgWindowEventHandlers &
+            , const WindowKeyEventHandler &
+        )
+    )
 
     inline void setKeyEventHandler(
         WindowEventHandlers &           _eventHandlers
@@ -233,10 +184,12 @@ namespace fg {
         );
     }
 
-    FG4CPPEXPORT void setMouseButtonEventHandler(
-        FgWindowEventHandlers &
-        , const WindowMouseButtonEventHandler &
-    );
+    FG4CPP_FUNCTION_VOID(
+        void setMouseButtonEventHandler(
+            FgWindowEventHandlers &
+            , const WindowMouseButtonEventHandler &
+        )
+    )
 
     inline void setMouseButtonEventHandler(
         WindowEventHandlers &                   _eventHandlers
@@ -260,10 +213,12 @@ namespace fg {
         );
     }
 
-    FG4CPPEXPORT void setMouseMotionEventHandler(
-        FgWindowEventHandlers &
-        , const WindowMouseMotionEventHandler &
-    );
+    FG4CPP_FUNCTION_VOID(
+        void setMouseMotionEventHandler(
+            FgWindowEventHandlers &
+            , const WindowMouseMotionEventHandler &
+        )
+    )
 
     inline void setMouseMotionEventHandler(
         WindowEventHandlers &                   _eventHandlers
