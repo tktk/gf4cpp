@@ -3,66 +3,8 @@
 
 #include "fgpp/window/closeevent.h"
 #include "fg/window/closeevent.h"
-
-namespace fg {
-    inline const FgWindowCloseEvent & toFg(
-        const WindowCloseEvent &    _EVENT
-    )
-    {
-        return reinterpret_cast< const FgWindowCloseEvent & >( _EVENT );
-    }
-
-    inline FgWindowCloseEvent & toFg(
-        WindowCloseEvent &  _event
-    )
-    {
-        return reinterpret_cast< FgWindowCloseEvent & >( _event );
-    }
-
-    inline const FgWindowCloseEvent * toFg(
-        const WindowCloseEvent *    _EVENT
-    )
-    {
-        return reinterpret_cast< const FgWindowCloseEvent * >( _EVENT );
-    }
-
-    inline FgWindowCloseEvent * toFg(
-        WindowCloseEvent *  _event
-    )
-    {
-        return reinterpret_cast< FgWindowCloseEvent * >( _event );
-    }
-
-    inline const WindowCloseEvent & toFgpp(
-        const FgWindowCloseEvent &  _EVENT
-    )
-    {
-        return reinterpret_cast< const WindowCloseEvent & >( _EVENT );
-    }
-
-    inline WindowCloseEvent & toFgpp(
-        FgWindowCloseEvent &    _event
-    )
-    {
-        return reinterpret_cast< WindowCloseEvent & >( _event );
-    }
-
-    inline const WindowCloseEvent * toFgpp(
-        const FgWindowCloseEvent *  _EVENT
-    )
-    {
-        return reinterpret_cast< const WindowCloseEvent * >( _EVENT );
-    }
-
-    inline WindowCloseEvent * toFgpp(
-        FgWindowCloseEvent *    _event
-    )
-    {
-        return reinterpret_cast< WindowCloseEvent * >( _event );
-    }
-}
-
-#include "fg4cpp/window/window.h"
+#include "fg4cpp/def/window/closeevent.h"
+#include "fg4cpp/def/window/window.h"
 
 namespace fg {
     inline WindowCloseEvent * newWindowCloseEvent(
