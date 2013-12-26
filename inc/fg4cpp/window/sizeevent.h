@@ -3,67 +3,9 @@
 
 #include "fgpp/window/sizeevent.h"
 #include "fg/window/sizeevent.h"
-
-namespace fg {
-    inline const FgWindowSizeEvent & toFg(
-        const WindowSizeEvent & _EVENT
-    )
-    {
-        return reinterpret_cast< const FgWindowSizeEvent & >( _EVENT );
-    }
-
-    inline FgWindowSizeEvent & toFg(
-        WindowSizeEvent &   _event
-    )
-    {
-        return reinterpret_cast< FgWindowSizeEvent & >( _event );
-    }
-
-    inline const FgWindowSizeEvent * toFg(
-        const WindowSizeEvent * _EVENT
-    )
-    {
-        return reinterpret_cast< const FgWindowSizeEvent * >( _EVENT );
-    }
-
-    inline FgWindowSizeEvent * toFg(
-        WindowSizeEvent *   _event
-    )
-    {
-        return reinterpret_cast< FgWindowSizeEvent * >( _event );
-    }
-
-    inline const WindowSizeEvent & toFgpp(
-        const FgWindowSizeEvent &   _EVENT
-    )
-    {
-        return reinterpret_cast< const WindowSizeEvent & >( _EVENT );
-    }
-
-    inline WindowSizeEvent & toFgpp(
-        FgWindowSizeEvent & _event
-    )
-    {
-        return reinterpret_cast< WindowSizeEvent & >( _event );
-    }
-
-    inline const WindowSizeEvent * toFgpp(
-        const FgWindowSizeEvent *   _EVENT
-    )
-    {
-        return reinterpret_cast< const WindowSizeEvent * >( _EVENT );
-    }
-
-    inline WindowSizeEvent * toFgpp(
-        FgWindowSizeEvent * _event
-    )
-    {
-        return reinterpret_cast< WindowSizeEvent * >( _event );
-    }
-}
-
-#include "fg4cpp/window/window.h"
-#include "fgpp/common/primitives.h"
+#include "fg4cpp/def/window/sizeevent.h"
+#include "fg4cpp/def/window/window.h"
+#include "fgpp/def/common/primitives.h"
 
 namespace fg {
     inline WindowSizeEvent * newWindowSizeEvent(
