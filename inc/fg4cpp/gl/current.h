@@ -3,68 +3,10 @@
 
 #include "fgpp/gl/current.h"
 #include "fg/gl/current.h"
-
-namespace fg {
-    inline const FgGLCurrent & toFg(
-        const GLCurrent &   _CURRENT
-    )
-    {
-        return reinterpret_cast< const FgGLCurrent & >( _CURRENT );
-    }
-
-    inline FgGLCurrent & toFg(
-        GLCurrent & _current
-    )
-    {
-        return reinterpret_cast< FgGLCurrent & >( _current );
-    }
-
-    inline const FgGLCurrent * toFg(
-        const GLCurrent *   _CURRENT
-    )
-    {
-        return reinterpret_cast< const FgGLCurrent * >( _CURRENT );
-    }
-
-    inline FgGLCurrent * toFg(
-        GLCurrent * _current
-    )
-    {
-        return reinterpret_cast< FgGLCurrent * >( _current );
-    }
-
-    inline const GLCurrent & toFgpp(
-        const FgGLCurrent & _CURRENT
-    )
-    {
-        return reinterpret_cast< const GLCurrent & >( _CURRENT );
-    }
-
-    inline GLCurrent & toFgpp(
-        FgGLCurrent &   _current
-    )
-    {
-        return reinterpret_cast< GLCurrent & >( _current );
-    }
-
-    inline const GLCurrent * toFgpp(
-        const FgGLCurrent * _CURRENT
-    )
-    {
-        return reinterpret_cast< const GLCurrent * >( _CURRENT );
-    }
-
-    inline GLCurrent * toFgpp(
-        FgGLCurrent *   _current
-    )
-    {
-        return reinterpret_cast< GLCurrent * >( _current );
-    }
-}
-
-#include "fg4cpp/gl/context.h"
-#include "fg4cpp/gl/functions.h"
-#include "fg4cpp/window/window.h"
+#include "fg4cpp/def/gl/current.h"
+#include "fg4cpp/def/gl/context.h"
+#include "fg4cpp/def/gl/functions.h"
+#include "fg4cpp/def/window/window.h"
 
 namespace fg {
     inline GLCurrent * getOrNewGLCurrent(
