@@ -3,69 +3,11 @@
 
 #include "fgpp/string/utf16.h"
 #include "fg/string/utf16.h"
-
-namespace fg {
-    inline const FgUtf16 & toFg(
-        const Utf16 &   _UTF16
-    )
-    {
-        return reinterpret_cast< const FgUtf16 & >( _UTF16 );
-    }
-
-    inline FgUtf16 & toFg(
-        Utf16 & _utf16
-    )
-    {
-        return reinterpret_cast< FgUtf16 & >( _utf16 );
-    }
-
-    inline const FgUtf16 * toFg(
-        const Utf16 *   _UTF16
-    )
-    {
-        return reinterpret_cast< const FgUtf16 * >( _UTF16 );
-    }
-
-    inline FgUtf16 * toFg(
-        Utf16 * _utf16
-    )
-    {
-        return reinterpret_cast< FgUtf16 * >( _utf16 );
-    }
-
-    inline const Utf16 & toFgpp(
-        const FgUtf16 & _UTF16
-    )
-    {
-        return reinterpret_cast< const Utf16 & >( _UTF16 );
-    }
-
-    inline Utf16 & toFgpp(
-        FgUtf16 &   _utf16
-    )
-    {
-        return reinterpret_cast< Utf16 & >( _utf16 );
-    }
-
-    inline const Utf16 * toFgpp(
-        const FgUtf16 * _UTF16
-    )
-    {
-        return reinterpret_cast< const Utf16 * >( _UTF16 );
-    }
-
-    inline Utf16 * toFgpp(
-        FgUtf16 *   _utf16
-    )
-    {
-        return reinterpret_cast< Utf16 * >( _utf16 );
-    }
-}
-
-#include "fg4cpp/string/string.h"
-#include "fg4cpp/string/utf8.h"
-#include "fg4cpp/string/utf32.h"
-#include "fgpp/common/primitives.h"
+#include "fg4cpp/def/string/utf16.h"
+#include "fg4cpp/def/string/string.h"
+#include "fg4cpp/def/string/utf8.h"
+#include "fg4cpp/def/string/utf32.h"
+#include "fgpp/def/common/primitives.h"
 
 namespace fg {
     inline Utf16 * newUtf16(
