@@ -1,8 +1,8 @@
-﻿#ifndef FG4CPP_GL_VERSION_H
-#define FG4CPP_GL_VERSION_H
+﻿#ifndef FG4CPP_DEF_GL_VERSION_H
+#define FG4CPP_DEF_GL_VERSION_H
 
-#include "fgpp/gl/version.h"
-#include "fg/gl/version.h"
+#include "fgpp/def/gl/version.h"
+#include "fg/def/gl/version.h"
 
 namespace fg {
     inline const FgGLVersion & toFg(
@@ -62,4 +62,4 @@ namespace fg {
     }
 }
 
-#endif  // FG4CPP_GL_VERSION_H
+#endif  // FG4CPP_DEF_GL_VERSION_H
