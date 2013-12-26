@@ -1,8 +1,8 @@
-﻿#ifndef FG4CPP_GL_TYPES_H
-#define FG4CPP_GL_TYPES_H
+﻿#ifndef FG4CPP_DEF_GL_TYPES_H
+#define FG4CPP_DEF_GL_TYPES_H
 
-#include "fgpp/gl/types.h"
-#include "fg/gl/types.h"
+#include "fgpp/def/gl/types.h"
+#include "fg/def/gl/types.h"
 
 namespace fg {
     inline const FgGLsync & toFg(
@@ -174,4 +174,4 @@ namespace fg {
     }
 }
 
-#endif  // FG4CPP_GL_TYPES_H
+#endif  // FG4CPP_DEF_GL_TYPES_H
