@@ -3,67 +3,9 @@
 
 #include "fgpp/window/mousebuttonevent.h"
 #include "fg/window/mousebuttonevent.h"
-
-namespace fg {
-    inline const FgWindowMouseButtonEvent & toFg(
-        const WindowMouseButtonEvent &  _EVENT
-    )
-    {
-        return reinterpret_cast< const FgWindowMouseButtonEvent & >( _EVENT );
-    }
-
-    inline FgWindowMouseButtonEvent & toFg(
-        WindowMouseButtonEvent &    _event
-    )
-    {
-        return reinterpret_cast< FgWindowMouseButtonEvent & >( _event );
-    }
-
-    inline const FgWindowMouseButtonEvent * toFg(
-        const WindowMouseButtonEvent *  _EVENT
-    )
-    {
-        return reinterpret_cast< const FgWindowMouseButtonEvent * >( _EVENT );
-    }
-
-    inline FgWindowMouseButtonEvent * toFg(
-        WindowMouseButtonEvent *    _event
-    )
-    {
-        return reinterpret_cast< FgWindowMouseButtonEvent * >( _event );
-    }
-
-    inline const WindowMouseButtonEvent & toFgpp(
-        const FgWindowMouseButtonEvent &    _EVENT
-    )
-    {
-        return reinterpret_cast< const WindowMouseButtonEvent & >( _EVENT );
-    }
-
-    inline WindowMouseButtonEvent & toFgpp(
-        FgWindowMouseButtonEvent &  _event
-    )
-    {
-        return reinterpret_cast< WindowMouseButtonEvent & >( _event );
-    }
-
-    inline const WindowMouseButtonEvent * toFgpp(
-        const FgWindowMouseButtonEvent *    _EVENT
-    )
-    {
-        return reinterpret_cast< const WindowMouseButtonEvent * >( _EVENT );
-    }
-
-    inline WindowMouseButtonEvent * toFgpp(
-        FgWindowMouseButtonEvent *  _event
-    )
-    {
-        return reinterpret_cast< WindowMouseButtonEvent * >( _event );
-    }
-}
-
-#include "fg4cpp/window/window.h"
-#include "fgpp/common/primitives.h"
+#include "fg4cpp/def/window/mousebuttonevent.h"
+#include "fg4cpp/def/window/window.h"
+#include "fgpp/def/common/primitives.h"
 
 namespace fg {
     inline WindowMouseButtonEvent * newWindowMouseButtonEvent(
