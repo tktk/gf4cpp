@@ -1,8 +1,8 @@
 ﻿#ifndef GF4CPP_DEF_MAIN_ARGS_H
 #define GF4CPP_DEF_MAIN_ARGS_H
 
-#include "gfpp/def/main/args.h"
-#include "gf/def/main/args.h"
+#include "fgpp/def/main/args.h"
+#include "fg/def/main/args.h"
 
 namespace gf {
     inline FgArgs & toGf(

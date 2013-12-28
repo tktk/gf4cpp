@@ -1,7 +1,7 @@
 ﻿#ifndef FG4CPP_DEF_GL_FUNCTIONS_H
 #define FG4CPP_DEF_GL_FUNCTIONS_H
 
-#include "fg4cpp/gl/types.h"
+#include "fg4cpp/def/gl/types.h"
 
 #define FG4CPP_GL_FUNCTIONS \
     /* GL_VERSION_1_0 */ \

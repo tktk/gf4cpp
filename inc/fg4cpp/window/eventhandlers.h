@@ -3,6 +3,7 @@
 
 #include "fgpp/window/eventhandlers.h"
 #include "fg/window/eventhandlers.h"
+#include "fg4cpp/def/window/eventhandlers.h"
 #include "fg4cpp/def/window/closeevent.h"
 #include "fg4cpp/def/window/positionevent.h"
 #include "fg4cpp/def/window/sizeevent.h"
