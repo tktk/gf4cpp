@@ -7,7 +7,7 @@ from wscripts import fg4cpp
 import os.path
 
 APPNAME = 'fg4cpp'
-VERSION = '0.3.0'
+VERSION = '0.4.0'
 
 out = common.BUILD_DIR
 
